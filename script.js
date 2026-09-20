@@ -3,766 +3,614 @@
      * Tu peux modifier ici le mot de passe admin, les sujets, les dates,
      * les questions, les réponses correctes, la durée et le barème.
      ********************************************************************/
-    const ADMIN_PASSWORD = "admin123"; // Change ce mot de passe ici.
+    const ADMIN_PASSWORD = "admin123";
 
     const CONFIG = {
-      defaultMarking: {
-        correct: 1,
-        wrong: -1,
-        empty: 0
-      },
+      defaultMarking: { correct: 1, wrong: -1, empty: 0 },
       subjects: [
-{
-          "id": "deontologie-ethique-1",
-          "title": "Sujet unique",
-          "matter": "Formation évaluation",
-          "description": "Évaluation complète sur les règles déontologiques, le secret professionnel, la responsabilité et l’éthique infirmière.",
-          "instructions": "Lis attentivement chaque question. Certaines questions peuvent avoir plusieurs bonnes réponses.",
-          "duration": 30,
-          "programmed": true,
-          "openDate": "2026-05-10",
-          "openTime": "00:00",
-          "closeDate": "2030-12-31",
-          "closeTime": "23:59",
-          "marking": {"correct": 1, "wrong": -1, "empty": 0},
-          "questions": [
-                    {
-                              "type": "qcd",
-                              "text": "L’infirmier doit respecter la confidentialité même après la mort du patient.",
-                              "options": [
-                                        "Vrai",
-                                        "Faux"
-                              ],
-                              "answer": "Vrai",
-                              "correct": "Vrai",
-                              "explanation": "Le secret professionnel oblige l’infirmier à préserver la confidentialité des informations concernant le patient, même après son décès. Cela maintient la dignité du patient et protège ses proches contre d’éventuels préjudices."
-                    },
-                    {
-                              "type": "qcd",
-                              "text": "Il est permis à l’infirmier de refuser ses soins sans justification en dehors des cas d’urgence.",
-                              "options": [
-                                        "Vrai",
-                                        "Faux"
-                              ],
-                              "answer": "Faux",
-                              "correct": "Faux",
-                              "explanation": "Hors situation d’urgence, si l’infirmier refuse de donner des soins, il doit motiver et expliquer ce refus conformément à l’éthique professionnelle. Un refus arbitraire serait une faute."
-                    },
-                    {
-                              "type": "qcd",
-                              "text": "Transmettre des informations de santé à la famille du patient sans son accord est une faute déontologique.",
-                              "options": [
-                                        "Vrai",
-                                        "Faux"
-                              ],
-                              "answer": "Vrai",
-                              "correct": "Vrai",
-                              "explanation": "Le secret professionnel interdit de révéler des informations concernant la santé du patient à sa famille sans consentement explicite, sauf exceptions prévues par la loi."
-                    },
-                    {
-                              "type": "qcd",
-                              "text": "L’infirmier peut modifier une prescription médicale écrite sans consulter le prescripteur si cela lui semble nécessaire.",
-                              "options": [
-                                        "Vrai",
-                                        "Faux"
-                              ],
-                              "answer": "Faux",
-                              "correct": "Faux",
-                              "explanation": "Un infirmier ne peut modifier une ordonnance médicale sans en parler au médecin, car seul le prescripteur en est responsable. Modifier sans avis médical est une faute grave."
-                    },
-                    {
-                              "type": "qcd",
-                              "text": "L’intégrité consiste principalement à respecter les horaires de travail.",
-                              "options": [
-                                        "Vrai",
-                                        "Faux"
-                              ],
-                              "answer": "Faux",
-                              "correct": "Faux",
-                              "explanation": "L’intégrité englobe l’honnêteté, la loyauté, le respect du patient et l’application des règles professionnelles, pas seulement le respect des horaires."
-                    },
-                    {
-                              "type": "qcd",
-                              "text": "Il est interdit à l’infirmier d’accepter une commission pour un acte professionnel.",
-                              "options": [
-                                        "Vrai",
-                                        "Faux"
-                              ],
-                              "answer": "Vrai",
-                              "correct": "Vrai",
-                              "explanation": "Accepter une commission ou rétribution pour un acte professionnel est un conflit d’intérêt et porte atteinte à l’indépendance et la probité de l’infirmier."
-                    },
-                    {
-                              "type": "qcd",
-                              "text": "Le secret professionnel doit être respecté uniquement lors des soins et pas lors de la formation d’étudiants.",
-                              "options": [
-                                        "Vrai",
-                                        "Faux"
-                              ],
-                              "answer": "Faux",
-                              "correct": "Faux",
-                              "explanation": "Le secret professionnel est valable en toutes circonstances, y compris lors de situations de formation ou d’encadrement d’étudiants."
-                    },
-                    {
-                              "type": "qcd",
-                              "text": "L’infirmier a le devoir d’assister toute personne en péril, même en dehors de son lieu de travail.",
-                              "options": [
-                                        "Vrai",
-                                        "Faux"
-                              ],
-                              "answer": "Vrai",
-                              "correct": "Vrai",
-                              "explanation": "L’obligation légale et morale d’assistance à personne en danger impose d’apporter secours même hors exercice professionnel."
-                    },
-                    {
-                              "type": "qcd",
-                              "text": "L’infirmier a le droit d’inventer des techniques de soins et de les appliquer sans protocole.",
-                              "options": [
-                                        "Vrai",
-                                        "Faux"
-                              ],
-                              "answer": "Faux",
-                              "correct": "Faux",
-                              "explanation": "Les soins infirmiers doivent suivre des protocoles validés pour garantir la sécurité et l’efficacité pour les patients."
-                    },
-                    {
-                              "type": "qcd",
-                              "text": "La prise en charge de la douleur fait partie du rôle propre de l’infirmier.",
-                              "options": [
-                                        "Vrai",
-                                        "Faux"
-                              ],
-                              "answer": "Vrai",
-                              "correct": "Vrai",
-                              "explanation": "L’évaluation et la prise en compte de la douleur sont des missions essentielles dans la pratique infirmière autonome."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "À qui l’infirmier doit-il s’adresser s’il a un doute grave sur une prescription médicale ?",
-                              "options": [
-                                        "Un autre patient",
-                                        "Le pharmacien",
-                                        "Le prescripteur",
-                                        "L’entourage du patient"
-                              ],
-                              "answer": "Le prescripteur",
-                              "correct": "Le prescripteur",
-                              "explanation": "C’est au médecin prescripteur que revient la responsabilité de clarifier ou corriger une prescription."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Lorsqu’un patient refuse d’être informé sur son état de santé, l’infirmier :",
-                              "options": [
-                                        "Le force à recevoir l’information",
-                                        "Ignore sa volonté",
-                                        "Respecte ce choix",
-                                        "Appelle la police"
-                              ],
-                              "answer": "Respecte ce choix",
-                              "correct": "Respecte ce choix",
-                              "explanation": "Le patient peut choisir de ne pas recevoir d’informations, ce choix relève de son autonomie."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "En cas de situation de maltraitance sur un mineur, l’infirmier doit :",
-                              "options": [
-                                        "En informer les autorités judiciaires",
-                                        "Garder le secret",
-                                        "Alerter les médias",
-                                        "Se taire sans rien faire"
-                              ],
-                              "answer": "En informer les autorités judiciaires",
-                              "correct": "En informer les autorités judiciaires",
-                              "explanation": "Le signalement de la maltraitance sur mineur est une obligation qui prévaut sur le secret professionnel."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "En cas de sinistre ou de calamité, l’infirmier doit :",
-                              "options": [
-                                        "Refuser d’intervenir quel que soit le contexte",
-                                        "Apporter son concours à l’action des autorités compétentes",
-                                        "Se cacher",
-                                        "Rebrousser chemin"
-                              ],
-                              "answer": "Apporter son concours à l’action des autorités compétentes",
-                              "correct": "Apporter son concours à l’action des autorités compétentes",
-                              "explanation": "L’infirmier doit se mobiliser pour soutenir l’action collective dans l’intérêt public."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Le code de déontologie s’applique :",
-                              "options": [
-                                        "Seulement à l’hôpital",
-                                        "À tous les infirmiers et étudiants",
-                                        "Uniquement en présence du supérieur",
-                                        "Que dans les cabinets privés"
-                              ],
-                              "answer": "À tous les infirmiers et étudiants",
-                              "correct": "À tous les infirmiers et étudiants",
-                              "explanation": "Tous les infirmiers et étudiants doivent respecter le code, peu importe le lieu ou l’encadrement."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Selon le code, l’infirmier doit garantir avant tout :",
-                              "options": [
-                                        "Le bien-être financier du service",
-                                        "La sécurité et le bien-être des patients",
-                                        "Sa propre réputation",
-                                        "Le nombre d’actes réalisés"
-                              ],
-                              "answer": "La sécurité et le bien-être des patients",
-                              "correct": "La sécurité et le bien-être des patients",
-                              "explanation": "La priorité absolue de l’action infirmière est la sécurité, la santé et le respect du patient."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Un document professionnel infirmier doit absolument comporter :",
-                              "options": [
-                                        "Le numéro du patient",
-                                        "La signature de l’infirmier",
-                                        "Le nom du directeur",
-                                        "Le budget prévisionnel du service"
-                              ],
-                              "answer": "La signature de l’infirmier",
-                              "correct": "La signature de l’infirmier",
-                              "explanation": "La signature engage la responsabilité de l’infirmier sur l’acte ou l’information portée au dossier."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "La non-discrimination du patient signifie que l’infirmier :",
-                              "options": [
-                                        "Soigne selon l’origine sociale",
-                                        "Prend en compte uniquement l’âge",
-                                        "Donne des soins égaux à tous",
-                                        "Trie selon la religion"
-                              ],
-                              "answer": "Donne des soins égaux à tous",
-                              "correct": "Donne des soins égaux à tous",
-                              "explanation": "L’infirmier doit soigner tous les patients de façon équitable, quelle que soit leur situation."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "L’intégrité de l’infirmier se traduit principalement par :",
-                              "options": [
-                                        "Honnêteté et franchise",
-                                        "Vitesse d’exécution",
-                                        "Résistance au stress",
-                                        "Caution pour un prêt bancaire"
-                              ],
-                              "answer": "Honnêteté et franchise",
-                              "correct": "Honnêteté et franchise",
-                              "explanation": "L’intégrité professionnelle implique la sincérité, la transparence et le respect de la morale."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Quand l’infirmier participe à un projet de recherche, il doit avant tout :",
-                              "options": [
-                                        "Publier les résultats librement",
-                                        "Respecter les lois et règlements",
-                                        "Refuser toute contrainte éthique",
-                                        "Imposer son point de vue"
-                              ],
-                              "answer": "Respecter les lois et règlements",
-                              "correct": "Respecter les lois et règlements",
-                              "explanation": "Toute recherche doit respecter le cadre légal et éthique, notamment la protection des personnes."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Dans la gestion des médicaments, l’infirmier doit :",
-                              "options": [
-                                        "Vérifier le dosage",
-                                        "Contrôler la date de péremption",
-                                        "Expérimenter librement avec les produits",
-                                        "Les laisser en accès libre"
-                              ],
-                              "answers": [
-                                        "Vérifier le dosage",
-                                        "Contrôler la date de péremption"
-                              ],
-                              "correct": [
-                                        "Vérifier le dosage",
-                                        "Contrôler la date de péremption"
-                              ],
-                              "explanation": "Ces vérifications préviennent des erreurs médicamenteuses et des accidents."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "L’information du patient selon le code doit être :",
-                              "options": [
-                                        "Adaptée",
-                                        "Trompeuse",
-                                        "Loyale",
-                                        "Élaborée uniquement par écrit"
-                              ],
-                              "answers": [
-                                        "Adaptée",
-                                        "Loyale"
-                              ],
-                              "correct": [
-                                        "Adaptée",
-                                        "Loyale"
-                              ],
-                              "explanation": "Il est essentiel que le patient comprenne ce qui lui est communiqué, sans tromperie."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Sont des modalités d’exercice reconnues pour l’infirmier :",
-                              "options": [
-                                        "Salarié",
-                                        "Libéral",
-                                        "Exclusivement bénévole",
-                                        "Mixte"
-                              ],
-                              "answers": [
-                                        "Salarié",
-                                        "Libéral",
-                                        "Mixte"
-                              ],
-                              "correct": [
-                                        "Salarié",
-                                        "Libéral",
-                                        "Mixte"
-                              ],
-                              "explanation": "L’infirmier peut exercer en étant salarié, libéral ou en cumulant différents statuts."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Font partie des devoirs envers les patients :",
-                              "options": [
-                                        "Non-discrimination",
-                                        "Prise en charge de la douleur",
-                                        "Favoriser l’avantage matériel",
-                                        "Pratiquer l’euthanasie à la demande"
-                              ],
-                              "answers": [
-                                        "Non-discrimination",
-                                        "Prise en charge de la douleur"
-                              ],
-                              "correct": [
-                                        "Non-discrimination",
-                                        "Prise en charge de la douleur"
-                              ],
-                              "explanation": "Ces principes garantissent l’égalité et la qualité de soin sans conditions illicites."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "L’infirmier qui constate une situation de maltraitance envers une personne vulnérable doit :",
-                              "options": [
-                                        "Faire preuve de circonspection",
-                                        "Alerter les autorités compétentes",
-                                        "Conseiller le silence",
-                                        "Dissimuler les faits"
-                              ],
-                              "answers": [
-                                        "Faire preuve de circonspection",
-                                        "Alerter les autorités compétentes"
-                              ],
-                              "correct": [
-                                        "Faire preuve de circonspection",
-                                        "Alerter les autorités compétentes"
-                              ],
-                              "explanation": "L’infirmier doit agir prudemment et signaler aux autorités tout doute de maltraitance."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Dans la collaboration professionnelle, l’infirmier doit :",
-                              "options": [
-                                        "Respecter l’indépendance des autres",
-                                        "Favoriser les conflits de compétence",
-                                        "Collaborer pour la qualité des soins",
-                                        "Ne jamais échanger d’informations"
-                              ],
-                              "answers": [
-                                        "Respecter l’indépendance des autres",
-                                        "Collaborer pour la qualité des soins"
-                              ],
-                              "correct": [
-                                        "Respecter l’indépendance des autres",
-                                        "Collaborer pour la qualité des soins"
-                              ],
-                              "explanation": "La collaboration et le respect mutuel améliorent la prise en charge."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Le respect de l’humanité dans le soin se traduit par :",
-                              "options": [
-                                        "La tolérance",
-                                        "La générosité",
-                                        "La compétition systématique",
-                                        "L’empathie"
-                              ],
-                              "answers": [
-                                        "La tolérance",
-                                        "La générosité",
-                                        "L’empathie"
-                              ],
-                              "correct": [
-                                        "La tolérance",
-                                        "La générosité",
-                                        "L’empathie"
-                              ],
-                              "explanation": "Ce sont des qualités humaines essentielles pour des soins respectueux et dignes."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Lors de son rôle d’encadrement, l’infirmier doit :",
-                              "options": [
-                                        "Veiller à la compétence des personnes sous sa responsabilité",
-                                        "Assurer la qualité des actes accomplis",
-                                        "Déléguer sans contrôle",
-                                        "Faire respecter la déontologie"
-                              ],
-                              "answers": [
-                                        "Veiller à la compétence des personnes sous sa responsabilité",
-                                        "Assurer la qualité des actes accomplis",
-                                        "Faire respecter la déontologie"
-                              ],
-                              "correct": [
-                                        "Veiller à la compétence des personnes sous sa responsabilité",
-                                        "Assurer la qualité des actes accomplis",
-                                        "Faire respecter la déontologie"
-                              ],
-                              "explanation": "L’encadrement exige de garantir la compétence, la qualité et le respect des règles."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "L’infirmier doit déclarer ses liens d’intérêts lorsqu’il :",
-                              "options": [
-                                        "Intervient lors d’un colloque public",
-                                        "Publie dans la presse",
-                                        "Prend la parole lors d’une réunion de famille",
-                                        "Participe à une formation universitaire"
-                              ],
-                              "answers": [
-                                        "Intervient lors d’un colloque public",
-                                        "Publie dans la presse",
-                                        "Participe à une formation universitaire"
-                              ],
-                              "correct": [
-                                        "Intervient lors d’un colloque public",
-                                        "Publie dans la presse",
-                                        "Participe à une formation universitaire"
-                              ],
-                              "explanation": "Déclarer ses liens d’intérêts garantit la transparence et l’éthique."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "En situation d’urgence sans protocole écrit, l’infirmier doit :",
-                              "options": [
-                                        "Attendre sans agir",
-                                        "Prendre les mesures nécessaires pour le patient",
-                                        "Préserver la sécurité maximale",
-                                        "Intervenir seulement si cela l’arrange"
-                              ],
-                              "answers": [
-                                        "Prendre les mesures nécessaires pour le patient",
-                                        "Préserver la sécurité maximale"
-                              ],
-                              "correct": [
-                                        "Prendre les mesures nécessaires pour le patient",
-                                        "Préserver la sécurité maximale"
-                              ],
-                              "explanation": "En cas d’urgence, l’infirmier doit agir pour le bien du patient, tout en assurant sa sécurité."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Selon le code, le respect de la dignité du patient consiste à :",
-                              "options": [
-                                        "Respecter sa vie privée",
-                                        "Éviter l’humiliation",
-                                        "Privilégier la rentabilité",
-                                        "Garantir l’accompagnement même après la mort"
-                              ],
-                              "answers": [
-                                        "Respecter sa vie privée",
-                                        "Éviter l’humiliation",
-                                        "Garantir l’accompagnement même après la mort"
-                              ],
-                              "correct": [
-                                        "Respecter sa vie privée",
-                                        "Éviter l’humiliation",
-                                        "Garantir l’accompagnement même après la mort"
-                              ],
-                              "explanation": "Ces principes assurent le respect du patient pendant et après sa vie."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Assure la compétence professionnelle chez l’infirmier :",
-                              "options": [
-                                        "Développement professionnel continu",
-                                        "Participation à la recherche scientifique",
-                                        "Refus de toute innovation",
-                                        "Formation de base seulement"
-                              ],
-                              "answers": [
-                                        "Développement professionnel continu",
-                                        "Participation à la recherche scientifique"
-                              ],
-                              "correct": [
-                                        "Développement professionnel continu",
-                                        "Participation à la recherche scientifique"
-                              ],
-                              "explanation": "Se former et participer à des recherches maintiennent la compétence au plus haut niveau."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Sont des documents obligatoires pour chaque patient :",
-                              "options": [
-                                        "Dossier de soins infirmiers",
-                                        "Certificat médical",
-                                        "Attestation réglementaire",
-                                        "Fiche de pharmacie"
-                              ],
-                              "answers": [
-                                        "Dossier de soins infirmiers",
-                                        "Attestation réglementaire"
-                              ],
-                              "correct": [
-                                        "Dossier de soins infirmiers",
-                                        "Attestation réglementaire"
-                              ],
-                              "explanation": "Ces documents assurent la traçabilité et la conformité des soins."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Le respect du secret professionnel englobe :",
-                              "options": [
-                                        "Le contenu des dossiers",
-                                        "Les informations transmises lors des publications scientifiques",
-                                        "Les conversations privées avec autrui",
-                                        "Les échanges entre confrères"
-                              ],
-                              "answers": [
-                                        "Le contenu des dossiers",
-                                        "Les informations transmises lors des publications scientifiques",
-                                        "Les échanges entre confrères"
-                              ],
-                              "correct": [
-                                        "Le contenu des dossiers",
-                                        "Les informations transmises lors des publications scientifiques",
-                                        "Les échanges entre confrères"
-                              ],
-                              "explanation": "Toute information obtenue dans l’exercice professionnel doit rester confidentielle."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "L’impartialité de l’infirmier expert nécessite de :",
-                              "options": [
-                                        "Se récuser en cas de conflit d’intérêts",
-                                        "Énoncer des faits utiles à l’instruction",
-                                        "Prendre parti pour un proche",
-                                        "Informer la personne examinée de la mission"
-                              ],
-                              "answers": [
-                                        "Se récuser en cas de conflit d’intérêts",
-                                        "Énoncer des faits utiles à l’instruction",
-                                        "Informer la personne examinée de la mission"
-                              ],
-                              "correct": [
-                                        "Se récuser en cas de conflit d’intérêts",
-                                        "Énoncer des faits utiles à l’instruction",
-                                        "Informer la personne examinée de la mission"
-                              ],
-                              "explanation": "L’impartialité exige transparence, objectivité et information à la personne concernée."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Par rapport au patient en fin de vie, l’infirmier doit :",
-                              "options": [
-                                        "Préserver la dignité du mourant",
-                                        "Provoquer la mort à la demande",
-                                        "Accompagner la famille",
-                                        "Assurer uniquement les soins de base"
-                              ],
-                              "answers": [
-                                        "Préserver la dignité du mourant",
-                                        "Accompagner la famille"
-                              ],
-                              "correct": [
-                                        "Préserver la dignité du mourant",
-                                        "Accompagner la famille"
-                              ],
-                              "explanation": "En fin de vie, l’accompagnement humain est primordial pour le patient et ses proches."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Les actes strictement interdits selon le code sont :",
-                              "options": [
-                                        "Compérage",
-                                        "Charlatannerie",
-                                        "Assistance morale",
-                                        "Partage d’honoraires hors contrat"
-                              ],
-                              "answers": [
-                                        "Compérage",
-                                        "Charlatannerie",
-                                        "Partage d’honoraires hors contrat"
-                              ],
-                              "correct": [
-                                        "Compérage",
-                                        "Charlatannerie",
-                                        "Partage d’honoraires hors contrat"
-                              ],
-                              "explanation": "Ces pratiques sont formellement interdites, car contraires à l’éthique professionnelle."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Pour garantir la qualité des soins supervisés, l’infirmier doit :",
-                              "options": [
-                                        "Contrôler l’activité des étudiants",
-                                        "Obtenir le consentement du patient pour les soins réalisés par un étudiant",
-                                        "Laisser les étudiants agir librement",
-                                        "Déléguer les responsabilités à un collègue"
-                              ],
-                              "answers": [
-                                        "Contrôler l’activité des étudiants",
-                                        "Obtenir le consentement du patient pour les soins réalisés par un étudiant"
-                              ],
-                              "correct": [
-                                        "Contrôler l’activité des étudiants",
-                                        "Obtenir le consentement du patient pour les soins réalisés par un étudiant"
-                              ],
-                              "explanation": "Contrôle et consentement sont garants de la qualité et de la sécurité des soins."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "Dans la pratique professionnelle, l’infirmier doit signaler :",
-                              "options": [
-                                        "Tout conflit d’intérêt",
-                                        "Erreur grave commise par un collègue",
-                                        "Informations confidentielles à la famille",
-                                        "Problèmes d’hygiène dans l’unité"
-                              ],
-                              "answers": [
-                                        "Tout conflit d’intérêt",
-                                        "Erreur grave commise par un collègue",
-                                        "Problèmes d’hygiène dans l’unité"
-                              ],
-                              "correct": [
-                                        "Tout conflit d’intérêt",
-                                        "Erreur grave commise par un collègue",
-                                        "Problèmes d’hygiène dans l’unité"
-                              ],
-                              "explanation": "Ces signalements protègent la qualité des soins et la sécurité des patients."
-                    },
-                    {
-                              "type": "qcm",
-                              "text": "L’excellence des soins infirmiers concerne :",
-                              "options": [
-                                        "La sécurité du patient",
-                                        "La rentabilité de l’établissement",
-                                        "Le bien-être de la personne à chaque étape de la vie",
-                                        "L’image positive de la profession"
-                              ],
-                              "answers": [
-                                        "La sécurité du patient",
-                                        "Le bien-être de la personne à chaque étape de la vie"
-                              ],
-                              "correct": [
-                                        "La sécurité du patient",
-                                        "Le bien-être de la personne à chaque étape de la vie"
-                              ],
-                              "explanation": "L’excellence se traduit par la recherche continue de la qualité, de la sécurité et du respect de la personnalité du patient à tout"
-                    }
-          ]
-}
-      ]
+  {
+    "id": "demographie-evaluation-1",
+    "title": "Évaluation de démographie N° 1",
+    "matter": "Démographie — IDE3 / SFM3",
+    "description": "Sujet du Dr ABO LAZARE. Correction préparée par Tirbuce Beda.",
+    "instructions": "Répondez aux 40 questions. Les QCM peuvent comporter une ou plusieurs bonnes réponses.",
+    "duration": 30,
+    "programmed": true,
+    "openDate": "2026-09-20",
+    "openTime": "00:00",
+    "closeDate": "2030-12-31",
+    "closeTime": "23:59",
+    "marking": {
+      "correct": 1,
+      "wrong": -1,
+      "empty": 0
+    },
+    "questions": [
+      {
+        "type": "qcd",
+        "text": "La population de référence en démographie est la population totale et partielle sur laquelle porte un recensement ou une enquête démographique.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "La population de référence est l'ensemble, total ou partiel, sur lequel porte l'observation démographique.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, Population de référence."
+      },
+      {
+        "type": "qcm",
+        "text": "L'âge modal est :",
+        "options": [
+          "La valeur ou modalité minimale d'une variable",
+          "L'âge qui regroupe l'effectif le plus élevé des individus",
+          "L'âge qui divise l'effectif de la population en deux groupes égaux"
+        ],
+        "answer": "L'âge qui regroupe l'effectif le plus élevé des individus",
+        "correct": "L'âge qui regroupe l'effectif le plus élevé des individus",
+        "explanation": "Le mode est la modalité dont l'effectif est le plus élevé. L'âge qui partage la population en deux groupes égaux est l'âge médian.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, 2.2.2 Âge modal et 2.2.3 Âge médian."
+      },
+      {
+        "type": "qcd",
+        "text": "La population de fait est constituée des personnes présentes sur le territoire au moment du recensement, quelle que soit la durée de leur séjour.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "La population de fait correspond aux personnes présentes au moment du dénombrement. La durée de six mois sert plutôt à apprécier la résidence habituelle dans la population de droit.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, I.1 Population de fait et I.2 Population de droit."
+      },
+      {
+        "type": "qcd",
+        "text": "Le rapport de masculinité est obtenu en rapportant l'effectif des femmes à celui des hommes.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Faux",
+        "correct": "Faux",
+        "explanation": "Le rapport de masculinité se calcule en divisant le nombre d'hommes par le nombre de femmes, puis en multipliant par 100.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, 2.1.1 Rapport de masculinité."
+      },
+      {
+        "type": "qcd",
+        "text": "Les caractéristiques socioculturelles et les caractéristiques de l'activité économique sont les autres types de structures de la population.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "Après l'âge et le sexe, le cours décrit des structures socioculturelles et des caractéristiques liées à l'activité économique.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, III Autres types de structure."
+      },
+      {
+        "type": "qcd",
+        "text": "La migration alternante correspond à des déplacements pendulaires hebdomadaires qui donnent naissance aux communes dortoirs, caractérisent les zones d'influence d'un type d'activité et permettent de délimiter le bassin d'emploi.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Faux",
+        "correct": "Faux",
+        "explanation": "La migration alternante décrite dans le cours est un déplacement pendulaire quotidien entre le domicile et le lieu de travail, et non hebdomadaire.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, Migration alternante."
+      },
+      {
+        "type": "qcm",
+        "text": "Un émigrant est défini comme :",
+        "options": [
+          "Une personne qui quitte son pays pour aller vivre à l'étranger",
+          "Une personne qui quitte son village pour aller vivre dans un village étranger",
+          "Une personne qui entre dans un pays étranger pour s'y établir",
+          "Une personne qui entre dans un village étranger pour s'y établir"
+        ],
+        "answer": "Une personne qui quitte son pays pour aller vivre à l'étranger",
+        "correct": "Une personne qui quitte son pays pour aller vivre à l'étranger",
+        "explanation": "Un émigrant est considéré du point de vue du territoire qu'il quitte. La personne qui entre dans un pays est un immigrant.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, Migrant."
+      },
+      {
+        "type": "qcm",
+        "text": "Les sources de données dans l'étude de la mobilité spatiale des populations sont :",
+        "options": [
+          "Les registres de consultations de l'hôpital",
+          "Les recensements de population",
+          "Les enquêtes démographiques",
+          "Les enquêtes de commodo et incommodo",
+          "Les registres des populations"
+        ],
+        "answers": [
+          "Les recensements de population",
+          "Les enquêtes démographiques",
+          "Les registres des populations"
+        ],
+        "correct": [
+          "Les recensements de population",
+          "Les enquêtes démographiques",
+          "Les registres des populations"
+        ],
+        "explanation": "Le cours retient les recensements, les enquêtes démographiques et les registres de population comme sources des données migratoires.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, II Sources des données."
+      },
+      {
+        "type": "qcm",
+        "text": "Quel type de personne n'est pas pris en compte dans la population de droit d'un territoire ?",
+        "options": [
+          "Un visiteur présent lors du passage des agents recenseurs",
+          "Un résident habituel temporairement absent",
+          "Un résident habituel présent",
+          "Un résident habituel en déplacement de courte durée"
+        ],
+        "answer": "Un visiteur présent lors du passage des agents recenseurs",
+        "correct": "Un visiteur présent lors du passage des agents recenseurs",
+        "explanation": "La population de droit comprend les résidents habituels présents et temporairement absents. Un visiteur relève de la population de fait du territoire visité, mais pas de sa population de droit.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, I.2 Population de droit."
+      },
+      {
+        "type": "qcm",
+        "text": "Un immigrant est défini comme :",
+        "options": [
+          "Une personne qui quitte son pays pour aller vivre à l'étranger",
+          "Une personne qui quitte son village pour aller vivre à l'étranger",
+          "Une personne qui entre dans un pays étranger pour s'y établir",
+          "Une personne qui entre dans un village étranger pour s'y établir"
+        ],
+        "answer": "Une personne qui entre dans un pays étranger pour s'y établir",
+        "correct": "Une personne qui entre dans un pays étranger pour s'y établir",
+        "explanation": "Un immigrant est une personne qui entre dans un pays étranger pour s'y établir.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, Migrant."
+      },
+      {
+        "type": "qcm",
+        "text": "Parmi les facteurs suivants, lesquels peuvent influencer la fécondité ?",
+        "options": [
+          "Les facteurs démographiques",
+          "Les variables intermédiaires",
+          "Les facteurs culturels, économiques et sociaux",
+          "Les appartenances politiques",
+          "Les facteurs environnementaux et liés à la modernisation"
+        ],
+        "answers": [
+          "Les facteurs démographiques",
+          "Les variables intermédiaires",
+          "Les facteurs culturels, économiques et sociaux",
+          "Les facteurs environnementaux et liés à la modernisation"
+        ],
+        "correct": [
+          "Les facteurs démographiques",
+          "Les variables intermédiaires",
+          "Les facteurs culturels, économiques et sociaux",
+          "Les facteurs environnementaux et liés à la modernisation"
+        ],
+        "explanation": "La fécondité dépend de facteurs démographiques et de variables intermédiaires, eux-mêmes influencés par le contexte culturel, économique, social et environnemental. L'appartenance politique n'est pas retenue ici comme catégorie directe du modèle.",
+        "source": "Connaissances démographiques générales, déterminants de la fécondité. Cette liste n'est pas détaillée dans les trois supports fournis."
+      },
+      {
+        "type": "qcd",
+        "text": "La population de droit ou population résidente est une population ayant son domicile habituel dans un territoire déterminé depuis plus de 6 mois.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "Le support retient une durée de séjour supérieure à six mois pour qualifier la résidence habituelle.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, I.2 Population de droit."
+      },
+      {
+        "type": "qcm",
+        "text": "L'effet négatif des migrations internationales sur le pays d'origine vise à :",
+        "options": [
+          "Constituer un capital utilisé à des fins de production",
+          "Perturber l'organisation des sociétés",
+          "Soulager le marché du travail",
+          "Améliorer la balance des paiements par les envois de fonds par les émigrants"
+        ],
+        "answer": "Perturber l'organisation des sociétés",
+        "correct": "Perturber l'organisation des sociétés",
+        "explanation": "Le départ, surtout des jeunes adultes, peut désorganiser la société et priver la région d'une partie de sa force de travail. Les autres propositions sont des effets potentiellement positifs.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, IV.4.2 Effets sur les pays d'origine."
+      },
+      {
+        "type": "qcm",
+        "text": "Quelles personnes appartiennent à la population de fait d'un territoire au moment du recensement ?",
+        "options": [
+          "Les résidents présents",
+          "Les résidents habituels temporairement absents",
+          "Les visiteurs présents lors du passage des agents recenseurs",
+          "Les personnes vivant habituellement dans un autre territoire et absentes lors du recensement"
+        ],
+        "answers": [
+          "Les résidents présents",
+          "Les visiteurs présents lors du passage des agents recenseurs"
+        ],
+        "correct": [
+          "Les résidents présents",
+          "Les visiteurs présents lors du passage des agents recenseurs"
+        ],
+        "explanation": "La population de fait regroupe les personnes effectivement présentes : résidents présents et visiteurs. Les résidents temporairement absents appartiennent à la population de droit.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, I.1 et I.2. Correction fondée sur les définitions du cours."
+      },
+      {
+        "type": "qcm",
+        "text": "Quel est le rapport de masculinité d'une population de 250 000 habitants comprenant 60 % de femmes ?",
+        "options": [
+          "25 hommes pour 100 femmes",
+          "40 hommes pour 100 femmes",
+          "60 hommes pour 100 femmes",
+          "66,67 hommes pour 100 femmes"
+        ],
+        "answer": "66,67 hommes pour 100 femmes",
+        "correct": "66,67 hommes pour 100 femmes",
+        "explanation": "Femmes = 250 000 x 60 % = 150 000. Hommes = 250 000 - 150 000 = 100 000. Rapport = 100 000 / 150 000 x 100 = 66,67 hommes pour 100 femmes.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, 2.1.1 Rapport de masculinité."
+      },
+      {
+        "type": "qcm",
+        "text": "La population de Koun-Fao est de 150 000 habitants au 31 décembre 2020 et de 180 000 habitants au 31 décembre 2021. Quelle est la population moyenne en 2021 ?",
+        "options": [
+          "75 000 habitants",
+          "330 000 habitants",
+          "165 000 habitants",
+          "90 000 habitants"
+        ],
+        "answer": "165 000 habitants",
+        "correct": "165 000 habitants",
+        "explanation": "Population moyenne = (population au début + population à la fin) / 2 = (150 000 + 180 000) / 2 = 165 000 habitants.",
+        "source": "Connaissances démographiques générales, formule de la population moyenne annuelle."
+      },
+      {
+        "type": "qcm",
+        "text": "Avec une population moyenne de 165 000 habitants et 330 décès en 2021, quel est le taux brut de mortalité de Koun-Fao ?",
+        "options": [
+          "2 pour cent",
+          "2,2 pour cent",
+          "2 pour mille",
+          "2,2 pour mille"
+        ],
+        "answer": "2 pour mille",
+        "correct": "2 pour mille",
+        "explanation": "Taux brut de mortalité = 330 / 165 000 x 1 000 = 2 décès pour 1 000 habitants.",
+        "source": "Connaissances démographiques générales, taux brut de mortalité."
+      },
+      {
+        "type": "qcm",
+        "text": "Choisir la bonne formule de la population moyenne au cours d'une année N :",
+        "options": [
+          "Pm = (P1/1/N + P31/12/N+1) / 2",
+          "Pm = (P1/1/N-1 + P31/12/N) / 2",
+          "Pm = (P1/1/N + P31/12/N) / 2"
+        ],
+        "answer": "Pm = (P1/1/N + P31/12/N) / 2",
+        "correct": "Pm = (P1/1/N + P31/12/N) / 2",
+        "explanation": "La population moyenne de l'année N est la moyenne de l'effectif au début et à la fin de cette même année.",
+        "source": "Connaissances démographiques générales, population moyenne annuelle."
+      },
+      {
+        "type": "qcm",
+        "text": "Quel est le rapport de masculinité d'une population de 50 000 habitants comprenant 80 % de femmes ?",
+        "options": [
+          "20 hommes pour 100 femmes",
+          "25 hommes pour 100 femmes",
+          "75 hommes pour 100 femmes",
+          "85 hommes pour 100 femmes"
+        ],
+        "answer": "25 hommes pour 100 femmes",
+        "correct": "25 hommes pour 100 femmes",
+        "explanation": "Femmes = 40 000 et hommes = 10 000. Rapport de masculinité = 10 000 / 40 000 x 100 = 25 hommes pour 100 femmes.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, 2.1.1 Rapport de masculinité."
+      },
+      {
+        "type": "qcm",
+        "text": "À Man en 2021, la population est de 250 000 habitants, les naissances vivantes sont de 3 000 et les femmes en âge de reproduction représentent 20 % de la population. Quel est le taux général de fécondité ?",
+        "options": [
+          "30 pour cent",
+          "60 pour cent",
+          "30 pour mille",
+          "60 pour mille"
+        ],
+        "answer": "60 pour mille",
+        "correct": "60 pour mille",
+        "explanation": "Femmes en âge de reproduction = 250 000 x 20 % = 50 000. Taux général de fécondité = 3 000 / 50 000 x 1 000 = 60 pour mille.",
+        "source": "Connaissances démographiques générales, taux général de fécondité."
+      },
+      {
+        "type": "qcm",
+        "text": "Quel est le taux de mortalité post-néonatale à Man si 35 décès de 28 à 364 jours sont observés pour 3 000 naissances vivantes ?",
+        "options": [
+          "14 pour mille",
+          "11,67 pour mille",
+          "17,1 pour mille"
+        ],
+        "answer": "11,67 pour mille",
+        "correct": "11,67 pour mille",
+        "explanation": "Taux = 35 / 3 000 x 1 000 = 11,67 décès post-néonatals pour 1 000 naissances vivantes.",
+        "source": "Connaissances démographiques générales, mortalité post-néonatale."
+      },
+      {
+        "type": "qcm",
+        "text": "Quel est le taux de mortalité néonatale précoce à Man si 25 décès de 0 à 7 jours sont observés pour 3 000 naissances vivantes ?",
+        "options": [
+          "8,33 pour mille",
+          "1,7 pour mille",
+          "7,1 pour mille"
+        ],
+        "answer": "8,33 pour mille",
+        "correct": "8,33 pour mille",
+        "explanation": "Taux = 25 / 3 000 x 1 000 = 8,33 décès néonatals précoces pour 1 000 naissances vivantes.",
+        "source": "Connaissances démographiques générales, mortalité néonatale précoce."
+      },
+      {
+        "type": "qcm",
+        "text": "La densité de la Côte d'Ivoire est de 85 habitants/km² pour 322 462 km². Quelle population correspond à ces données ?",
+        "options": [
+          "27 027 409 habitants",
+          "27 409 270 habitants",
+          "24 709 270 habitants",
+          "24 027 409 habitants"
+        ],
+        "answer": "27 409 270 habitants",
+        "correct": "27 409 270 habitants",
+        "explanation": "Population = densité x superficie = 85 x 322 462 = 27 409 270 habitants.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, 2.1.1 Densité de population."
+      },
+      {
+        "type": "qcm",
+        "text": "Quelles sont les principales sources permettant de recueillir des données sur la mortalité ?",
+        "options": [
+          "L'état civil",
+          "Les fichiers administratifs et registres de population",
+          "Les enquêtes démographiques",
+          "Les recensements de population",
+          "Les décès eux-mêmes"
+        ],
+        "answers": [
+          "L'état civil",
+          "Les fichiers administratifs et registres de population",
+          "Les enquêtes démographiques",
+          "Les recensements de population"
+        ],
+        "correct": [
+          "L'état civil",
+          "Les fichiers administratifs et registres de population",
+          "Les enquêtes démographiques",
+          "Les recensements de population"
+        ],
+        "explanation": "L'état civil, les recensements, les enquêtes et certains fichiers constituent des sources de données. Les décès sont les événements étudiés, pas une source de collecte.",
+        "source": "SOURCES DE DONNEES DEMO, diapositives 5 à 23 ; DEMOGRAPHIE L2 INFAS 2025-2026, Sources de données démographiques."
+      },
+      {
+        "type": "qcm",
+        "text": "Quel est le taux de mortalité néonatale tardive à Man si 40 décès de 8 à 27 jours sont observés pour 3 000 naissances vivantes ?",
+        "options": [
+          "1,7 pour mille",
+          "7,1 pour mille",
+          "13,33 pour mille"
+        ],
+        "answer": "13,33 pour mille",
+        "correct": "13,33 pour mille",
+        "explanation": "Taux = 40 / 3 000 x 1 000 = 13,33 décès néonatals tardifs pour 1 000 naissances vivantes.",
+        "source": "Connaissances démographiques générales, mortalité néonatale tardive."
+      },
+      {
+        "type": "qcm",
+        "text": "Quel est le taux de mortalité néonatale à Man avec 25 décès précoces et 40 décès tardifs pour 3 000 naissances vivantes ?",
+        "options": [
+          "21,67 pour mille",
+          "11,67 pour mille",
+          "8,33 pour mille",
+          "13,33 pour mille"
+        ],
+        "answer": "21,67 pour mille",
+        "correct": "21,67 pour mille",
+        "explanation": "Décès néonatals = 25 + 40 = 65. Taux = 65 / 3 000 x 1 000 = 21,67 décès néonatals pour 1 000 naissances vivantes.",
+        "source": "Connaissances démographiques générales, mortalité néonatale."
+      },
+      {
+        "type": "qcd",
+        "text": "L'objet de la démographie est la population humaine.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "La population humaine constitue l'objet d'étude de la démographie.",
+        "source": "COURS DE DEMOGRAPHIE GENERALITE DION 2026, diapositive 17 ; DEMOGRAPHIE L2 INFAS 2025-2026, Généralités IV."
+      },
+      {
+        "type": "qcm",
+        "text": "Parmi les propositions suivantes, lesquelles ne sont pas présentées comme des composantes principales autonomes de la démographie dans le cours ?",
+        "options": [
+          "La démographie pure ou rationnelle",
+          "La démographie théorique",
+          "La démographie quantitative",
+          "La démographie planétaire ou globale",
+          "La démographie économique et sociale",
+          "La démographie historique"
+        ],
+        "answers": [
+          "La démographie théorique",
+          "La démographie quantitative"
+        ],
+        "correct": [
+          "La démographie théorique",
+          "La démographie quantitative"
+        ],
+        "explanation": "La démographie théorique et la démographie quantitative sont présentées comme des éléments de la démographie pure. Les propositions A, D, E et F sont des composantes principales citées dans le cours.",
+        "source": "COURS DE DEMOGRAPHIE GENERALITE DION 2026, diapositives 18 à 25 ; DEMOGRAPHIE L2 INFAS 2025-2026, Généralités V."
+      },
+      {
+        "type": "qcd",
+        "text": "La densité globale d'un pays se définit par le nombre total d'habitants divisé par sa superficie en km².",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "La densité globale est le rapport entre la population totale et la superficie du territoire.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, 2.1.1 Densité de population."
+      },
+      {
+        "type": "qcd",
+        "text": "L'âge moyen à la maternité est l'âge moyen des mères à la naissance de leurs enfants.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "Cet indicateur résume l'âge moyen des femmes au moment des naissances observées.",
+        "source": "Connaissances démographiques générales, indicateurs de fécondité."
+      },
+      {
+        "type": "qcd",
+        "text": "La cohorte est un ensemble d'individus qui ont vécu en même temps un événement semblable appelé événement d'origine.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "Le partage d'un même événement origine au même moment définit la cohorte.",
+        "source": "COURS DE DEMOGRAPHIE GENERALITE DION 2026, diapositive 13 ; DEMOGRAPHIE L2 INFAS 2025-2026, Généralités I.1.8."
+      },
+      {
+        "type": "qcd",
+        "text": "La population d'une localité au 31 décembre de l'année N-1 est identique à celle de ladite localité au 1er janvier de l'année N.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "Par convention de continuité, l'effectif de clôture au 31 décembre N-1 correspond à l'effectif d'ouverture au 1er janvier N, en l'absence d'un événement intercalé.",
+        "source": "Connaissances démographiques générales, repérage temporel des populations."
+      },
+      {
+        "type": "qcd",
+        "text": "Une observation de suivi est un mode d'observation dans lequel les événements relatifs à une même personne sont rapprochés afin de les saisir dans leur succession.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "Le rapprochement des événements concernant une même personne permet de suivre leur succession dans le temps.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Généralités, Observation de suivi."
+      },
+      {
+        "type": "qcd",
+        "text": "L'état de la population est l'effectif et la composition de la population selon divers critères variés.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "L'état décrit l'effectif et la composition selon l'âge, le sexe, l'état matrimonial, l'état de santé ou d'autres critères.",
+        "source": "COURS DE DEMOGRAPHIE GENERALITE DION 2026, diapositive 7 ; DEMOGRAPHIE L2 INFAS 2025-2026, Généralités I.1.3."
+      },
+      {
+        "type": "qcd",
+        "text": "La mortalité juvénile est le décès qui survient entre 0 et 4 ans.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Faux",
+        "correct": "Faux",
+        "explanation": "La mortalité juvénile concerne habituellement les décès de 1 à 4 ans. Les décès avant un an relèvent de la mortalité infantile ; l'ensemble 0 à 4 ans correspond à la mortalité infanto-juvénile ou des moins de cinq ans.",
+        "source": "Connaissances démographiques et sanitaires générales, indicateurs de mortalité de l'enfant."
+      },
+      {
+        "type": "qcd",
+        "text": "Le taux général de fécondité est un indicateur démographique.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "Il rapporte les naissances vivantes à l'effectif des femmes en âge de procréer au cours de la période.",
+        "source": "Connaissances démographiques générales, indicateurs de fécondité."
+      },
+      {
+        "type": "qcd",
+        "text": "La projection de population permet d'obtenir la population exacte d'une localité.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Faux",
+        "correct": "Faux",
+        "explanation": "Une projection fournit une estimation future fondée sur des hypothèses. Elle ne donne pas un effectif futur exact.",
+        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Orientation nouvelle de la démographie, Introduction et I."
+      },
+      {
+        "type": "qcd",
+        "text": "Les décès influencent l'accroissement naturel.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Vrai",
+        "correct": "Vrai",
+        "explanation": "L'accroissement naturel résulte de la différence entre les naissances et les décès. Une augmentation des décès réduit donc cet accroissement.",
+        "source": "COURS DE DEMOGRAPHIE GENERALITE DION 2026, diapositive 26 ; connaissances démographiques générales."
+      },
+      {
+        "type": "qcd",
+        "text": "La natalité désigne la fréquence des naissances au sein de la sous-population des femmes en âge de procréer.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": "Faux",
+        "correct": "Faux",
+        "explanation": "La natalité rapporte les naissances à l'ensemble de la population. La fréquence des naissances chez les femmes en âge de procréer relève de la fécondité.",
+        "source": "Connaissances démographiques générales, distinction natalité et fécondité."
+      },
+      {
+        "type": "qcm",
+        "text": "Les variables intermédiaires des facteurs influençant la fécondité sont :",
+        "options": [
+          "La mortalité",
+          "La proportion des femmes mariées chez les femmes en âge de reproduction",
+          "La pratique de la contraception et la stérilité permanente",
+          "Le groupe ethnique",
+          "Le statut de la femme",
+          "L'infertilité post-partum"
+        ],
+        "answers": [
+          "La proportion des femmes mariées chez les femmes en âge de reproduction",
+          "La pratique de la contraception et la stérilité permanente",
+          "L'infertilité post-partum"
+        ],
+        "correct": [
+          "La proportion des femmes mariées chez les femmes en âge de reproduction",
+          "La pratique de la contraception et la stérilité permanente",
+          "L'infertilité post-partum"
+        ],
+        "explanation": "Les variables intermédiaires agissent directement sur l'exposition au risque de grossesse ou la capacité de concevoir : mariage ou union, contraception, stérilité et infertilité post-partum. Le groupe ethnique et le statut de la femme sont des facteurs de contexte.",
+        "source": "Connaissances démographiques générales, variables intermédiaires de la fécondité. Cette partie n'est pas développée dans les trois supports fournis."
+      }
+    ]
+  }
+]
     };
 
-    // Complément de la banque : 100 questions équilibrées au total
-    // (34 Vrai/Faux, 33 réponses uniques et 33 réponses multiples).
-    const EXTRA_TRUE_FALSE = [
-      ["Le consentement libre et éclairé du patient doit être recherché avant un soin, sauf urgence prévue par la loi.", "Vrai"],
-      ["Le secret professionnel ne concerne que les informations écrites dans le dossier médical.", "Faux"],
-      ["L’infirmier doit assurer la continuité des soins lorsqu’il quitte son poste.", "Vrai"],
-      ["Une erreur de soin peut être dissimulée si elle n’a pas entraîné de dommage visible.", "Faux"],
-      ["Le respect de la dignité s’applique à toute personne, quelle que soit sa situation sociale.", "Vrai"],
-      ["L’infirmier peut publier la photographie identifiable d’un patient sans son autorisation.", "Faux"],
-      ["La traçabilité des soins contribue à la sécurité du patient.", "Vrai"],
-      ["L’urgence autorise l’infirmier à agir dans les limites de ses compétences.", "Vrai"],
-      ["Un étudiant peut réaliser seul tout acte infirmier sans supervision.", "Faux"],
-      ["L’infirmier doit actualiser régulièrement ses connaissances professionnelles.", "Vrai"],
-      ["Le refus de soins exprimé par un patient capable doit être ignoré.", "Faux"],
-      ["La discrétion professionnelle concerne aussi les conversations dans les lieux publics.", "Vrai"],
-      ["Une prescription illisible doit être exécutée sans demander de clarification.", "Faux"],
-      ["L’infirmier doit respecter les croyances du patient lorsqu’elles ne compromettent pas la sécurité des soins.", "Vrai"],
-      ["Le dossier de soins peut être laissé à la portée de toute personne du service.", "Faux"],
-      ["La relation soignant-soigné doit rester professionnelle.", "Vrai"],
-      ["L’infirmier peut recevoir un avantage pour orienter un patient vers un établissement particulier.", "Faux"],
-      ["Le signalement d’un événement indésirable participe à l’amélioration de la qualité des soins.", "Vrai"],
-      ["La confidentialité doit être respectée pendant les transmissions entre professionnels.", "Vrai"],
-      ["L’infirmier est autorisé à exercer sous l’effet de l’alcool s’il se sent capable.", "Faux"],
-      ["La responsabilité professionnelle peut être engagée en cas de négligence.", "Vrai"],
-      ["Le patient n’a jamais le droit d’accéder aux informations qui le concernent.", "Faux"],
-      ["L’infirmier doit protéger les données de santé enregistrées sur un outil numérique.", "Vrai"],
-      ["La bientraitance consiste uniquement à administrer correctement les médicaments.", "Faux"]
-    ];
-
-    const EXTRA_SINGLE = [
-      ["Quel principe impose de respecter les choix du patient ?", ["Autonomie", "Rentabilité", "Compétition", "Publicité"], "Autonomie"],
-      ["Avant d’administrer un médicament, l’infirmier doit d’abord :", ["Vérifier l’identité du patient", "Demander à la famille de décider", "Modifier la dose", "Supprimer la prescription"], "Vérifier l’identité du patient"],
-      ["Face à une prescription illisible, la conduite correcte est de :", ["Contacter le prescripteur", "Deviner la dose", "Ne rien tracer", "Demander au patient de choisir"], "Contacter le prescripteur"],
-      ["La transmission ciblée sert principalement à :", ["Assurer la continuité des soins", "Faire de la publicité", "Remplacer le diagnostic médical", "Éviter toute communication"], "Assurer la continuité des soins"],
-      ["Quel document assure la traçabilité quotidienne des soins infirmiers ?", ["Dossier de soins", "Carte bancaire", "Registre des visiteurs", "Bon de commande"], "Dossier de soins"],
-      ["Lorsqu’une erreur médicamenteuse survient, la priorité est de :", ["Sécuriser et surveiller le patient", "Dissimuler l’erreur", "Effacer le dossier", "Quitter le service"], "Sécuriser et surveiller le patient"],
-      ["Le secret partagé est permis principalement entre :", ["Professionnels participant à la prise en charge", "Tous les voisins", "Les médias", "Tous les visiteurs"], "Professionnels participant à la prise en charge"],
-      ["La valeur éthique qui vise à ne pas nuire est :", ["Non-malfaisance", "Popularité", "Obéissance aveugle", "Rentabilité"], "Non-malfaisance"],
-      ["En cas de refus de soins, l’infirmier doit :", ["Informer, respecter et tracer la décision", "Contraindre systématiquement", "Se moquer du patient", "Détruire le dossier"], "Informer, respecter et tracer la décision"],
-      ["Le professionnel responsable de clarifier une prescription est :", ["Le prescripteur", "Le visiteur", "Le gardien", "Un autre patient"], "Le prescripteur"],
-      ["La bonne attitude devant un collègue réalisant un acte dangereux est de :", ["Protéger le patient et signaler la situation", "Se taire toujours", "Filmer pour publier", "Encourager l’acte"], "Protéger le patient et signaler la situation"],
-      ["Une information donnée au patient doit être :", ["Claire et adaptée", "Volontairement confuse", "Réservée aux proches", "Toujours mensongère"], "Claire et adaptée"],
-      ["Le consentement du patient doit être :", ["Libre et éclairé", "Acheté", "Imposé", "Secret pour le patient"], "Libre et éclairé"],
-      ["La formation continue permet surtout de :", ["Maintenir les compétences", "Éviter les protocoles", "Supprimer la responsabilité", "Remplacer tout travail en équipe"], "Maintenir les compétences"],
-      ["Dans une situation d’urgence vitale, la priorité est de :", ["Porter secours dans ses compétences", "Attendre systématiquement", "Chercher un avantage financier", "Photographier la scène"], "Porter secours dans ses compétences"],
-      ["Le respect de la vie privée exige notamment de :", ["Préserver l’intimité pendant les soins", "Laisser la porte ouverte", "Exposer le patient", "Informer tous les visiteurs"], "Préserver l’intimité pendant les soins"],
-      ["Une délégation de tâche correcte nécessite :", ["Une personne compétente et une supervision", "L’absence de contrôle", "Le hasard", "L’accord des médias"], "Une personne compétente et une supervision"],
-      ["L’identitovigilance vise à :", ["Éviter les erreurs d’identité", "Accélérer la facturation", "Classer les visiteurs", "Choisir les patients"], "Éviter les erreurs d’identité"],
-      ["L’empathie consiste à :", ["Comprendre le vécu du patient sans le juger", "Décider à sa place", "Nier sa souffrance", "Rompre toute communication"], "Comprendre le vécu du patient sans le juger"],
-      ["La justice dans les soins signifie :", ["Traiter équitablement les patients", "Favoriser ses proches", "Soigner selon la richesse", "Refuser les personnes vulnérables"], "Traiter équitablement les patients"],
-      ["Après un soin, l’infirmier doit :", ["Tracer les actes réalisés", "Effacer la prescription", "Partager le dossier en public", "Modifier l’identité"], "Tracer les actes réalisés"],
-      ["La première mesure de prévention des infections associées aux soins est :", ["L’hygiène des mains", "Le port permanent de bijoux", "La réutilisation des aiguilles", "L’absence de nettoyage"], "L’hygiène des mains"],
-      ["Un conflit d’intérêts doit être :", ["Déclaré", "Caché", "Récompensé", "Imposé au patient"], "Déclaré"]
-    ];
-
-    const EXTRA_MULTIPLE = [
-      ["Avant l’administration d’un médicament, quelles vérifications sont nécessaires ?", ["Identité du patient", "Nom du médicament", "Dose prescrite", "Popularité du produit"], ["Identité du patient", "Nom du médicament", "Dose prescrite"]],
-      ["Quels éléments favorisent la confidentialité ?", ["Parler à voix basse", "Protéger les dossiers", "Choisir un lieu adapté", "Publier les informations"], ["Parler à voix basse", "Protéger les dossiers", "Choisir un lieu adapté"]],
-      ["Quelles attitudes relèvent de la bientraitance ?", ["Écouter le patient", "Respecter son intimité", "Prévenir la douleur", "L’humilier"], ["Écouter le patient", "Respecter son intimité", "Prévenir la douleur"]],
-      ["Quels éléments doivent être tracés après un soin ?", ["Acte réalisé", "Date et heure", "Observations pertinentes", "Rumeurs du quartier"], ["Acte réalisé", "Date et heure", "Observations pertinentes"]],
-      ["En cas d’événement indésirable, l’infirmier doit :", ["Sécuriser le patient", "Alerter selon la procédure", "Tracer les faits", "Dissimuler l’événement"], ["Sécuriser le patient", "Alerter selon la procédure", "Tracer les faits"]],
-      ["Quels droits fondamentaux du patient doivent être respectés ?", ["Dignité", "Information", "Consentement", "Discrimination"], ["Dignité", "Information", "Consentement"]],
-      ["La continuité des soins repose sur :", ["Transmissions fiables", "Traçabilité", "Organisation de la relève", "Suppression du dossier"], ["Transmissions fiables", "Traçabilité", "Organisation de la relève"]],
-      ["Quelles mesures protègent les données numériques de santé ?", ["Mot de passe personnel", "Verrouillage de l’écran", "Accès limité aux personnes autorisées", "Partage public des identifiants"], ["Mot de passe personnel", "Verrouillage de l’écran", "Accès limité aux personnes autorisées"]],
-      ["Une communication professionnelle de qualité comprend :", ["Écoute active", "Langage adapté", "Respect", "Jugement humiliant"], ["Écoute active", "Langage adapté", "Respect"]],
-      ["Lors de l’encadrement d’un étudiant, l’infirmier doit :", ["Évaluer ses compétences", "Superviser les actes", "Respecter le consentement du patient", "Le laisser agir sans contrôle"], ["Évaluer ses compétences", "Superviser les actes", "Respecter le consentement du patient"]],
-      ["Quels comportements préviennent les conflits d’intérêts ?", ["Déclarer ses liens", "Refuser les avantages indus", "Rester impartial", "Accepter les commissions cachées"], ["Déclarer ses liens", "Refuser les avantages indus", "Rester impartial"]],
-      ["Devant un refus de soins, quelles actions sont adaptées ?", ["Écouter les raisons", "Informer des conséquences", "Tracer le refus", "Forcer systématiquement"], ["Écouter les raisons", "Informer des conséquences", "Tracer le refus"]],
-      ["Quels principes guident une pratique infirmière éthique ?", ["Bienfaisance", "Non-malfaisance", "Justice", "Favoritisme"], ["Bienfaisance", "Non-malfaisance", "Justice"]]
-    ];
-
-    const questionBank = CONFIG.subjects[0].questions;
-    EXTRA_TRUE_FALSE.forEach(([text, correct]) => questionBank.push({
-      type: "qcd", text, options: ["Vrai", "Faux"], answer: correct, correct,
-      explanation: correct === "Vrai" ? "Cette affirmation respecte les règles professionnelles." : "Cette affirmation est contraire aux règles professionnelles."
-    }));
-    EXTRA_SINGLE.forEach(([text, options, correct]) => questionBank.push({
-      type: "qcm", text, options, answer: correct, correct,
-      explanation: `La bonne réponse est : ${correct}.`
-    }));
-    EXTRA_MULTIPLE.forEach(([text, options, correct]) => questionBank.push({
-      type: "qcm", text, options, answers: correct, correct,
-      explanation: "Les réponses indiquées correspondent aux bonnes pratiques professionnelles."
-    }));
-
-    /********************************************************************
+        /********************************************************************
      * VARIABLES GLOBALES
      ********************************************************************/
-    // Aucun sujet n'est chargé avant l'ouverture de la prochaine évaluation.
-    CONFIG.subjects = [];
-
-    const STORAGE_SUBJECTS = "NEUROCHIRURGIE_L3_subjects_v1";
-    const STORAGE_RESULTS = "NEUROCHIRURGIE_L3_results_v1";
-    const STORAGE_ATTEMPTS = "NEUROCHIRURGIE_L3_attempts_v1";
+    const STORAGE_SUBJECTS = "DEMOGRAPHIE_EVALUATION_subjects_v2";
+    const STORAGE_RESULTS = "DEMOGRAPHIE_EVALUATION_results_v2";
+    const STORAGE_ATTEMPTS = "DEMOGRAPHIE_EVALUATION_attempts_v2";
 
     let subjects = [];
         let currentSubject = null;
@@ -772,9 +620,9 @@
     let currentQuestionIndex = 0;
     let savedQuestionAnswers = {};
     const QUESTION_DURATION_SECONDS = 30;
-    const QUIZ_SETTINGS_KEY = "APPRENTISSAGE_EVALUATION_quiz_settings_v1";
+    const QUIZ_SETTINGS_KEY = "DEMOGRAPHIE_EVALUATION_quiz_settings_v2";
     const DEFAULT_QUIZ_SETTINGS = {
-      questionCount: 15,
+      questionCount: 40,
       displayMode: "one",
       questionType: "both",
       cameraEnabled: true,
@@ -782,7 +630,7 @@
     };
     let quizSettings = loadQuizSettings();
 
-    // Chaque évaluation démarre avec 15 questions par défaut.
+    // Chaque évaluation démarre avec les 40 questions du sujet.
     // La banque complète reste disponible et le tirage est renouvelé à chaque tentative.
 
     function shuffleQuestions(items) {
@@ -1887,6 +1735,7 @@
           studentAnswer,
           correctAnswer,
           correction: q.correction || q.explanation || "",
+          source: q.source || "",
           state
         });
       });
@@ -2020,6 +1869,7 @@
             <p><strong>Réponse donnée :</strong> ${a.studentAnswer ? escapeHTML(a.studentAnswer) : "Aucune réponse"}</p>
             <p><strong>Bonne réponse :</strong> ${escapeHTML(a.correctAnswer)}</p>
             ${a.correction ? `<p><strong>Explication :</strong> ${escapeHTML(a.correction)}</p>` : `<p><strong>Explication :</strong> La bonne réponse est ${escapeHTML(a.correctAnswer)}.</p>`}
+            ${a.source ? `<p><strong>Source :</strong> ${escapeHTML(a.source)}</p>` : ""}
           </div>
         `}).join("")}
       `;
