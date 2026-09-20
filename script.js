@@ -620,12 +620,12 @@
     let currentQuestionIndex = 0;
     let savedQuestionAnswers = {};
     const QUESTION_DURATION_SECONDS = 30;
-    const QUIZ_SETTINGS_KEY = "DEMOGRAPHIE_EVALUATION_quiz_settings_v2";
+    const QUIZ_SETTINGS_KEY = "DEMOGRAPHIE_EVALUATION_quiz_settings_v3";
     const DEFAULT_QUIZ_SETTINGS = {
       questionCount: 40,
       displayMode: "one",
       questionType: "both",
-      cameraEnabled: true,
+      cameraEnabled: false,
       antiCheatEnabled: true
     };
     let quizSettings = loadQuizSettings();
@@ -1097,9 +1097,9 @@
               <small>Demander une photo avant de commencer le sujet.</small>
             </div>
             <label class="settings-switch">
-              <input id="settingsCameraEnabled" type="checkbox" ${quizSettings.cameraEnabled !== false ? "checked" : ""}>
+              <input id="settingsCameraEnabled" type="checkbox" disabled>
               <span class="settings-switch-slider"></span>
-              <span class="settings-switch-state">${quizSettings.cameraEnabled !== false ? "Activée" : "Désactivée"}</span>
+              <span class="settings-switch-state">Désactivée</span>
             </label>
           </div>
           <div class="settings-toggle-row">
@@ -1137,7 +1137,7 @@
         questionCount: Math.max(1, Math.min(max, Number.isFinite(requested) ? Math.floor(requested) : 15)),
         displayMode: document.getElementById("settingsDisplayMode").value,
         questionType: type,
-        cameraEnabled: document.getElementById("settingsCameraEnabled").checked,
+        cameraEnabled: false,
         antiCheatEnabled: document.getElementById("settingsAntiCheatEnabled").checked
       };
       localStorage.setItem(QUIZ_SETTINGS_KEY, JSON.stringify(quizSettings));
@@ -1265,11 +1265,7 @@
 
 
     function startQuickEvaluation(subjectId) {
-      if (quizSettings.cameraEnabled === false) {
-        beginQuizAfterCamera(subjectId, "");
-        return;
-      }
-      openCameraBeforeQuiz(subjectId);
+      beginQuizAfterCamera(subjectId, "");
     }
 
     function openCameraBeforeQuiz(subjectId) {
@@ -1527,12 +1523,8 @@
       }
       if (!nom || !prenom) return alert("Veuillez renseigner nom et prénom.");
 
-      // Les étudiants peuvent reprendre le même sujet autant de fois qu’ils le souhaitent.
-      if (quizSettings.cameraEnabled === false) {
-        beginEvaluationAfterPhoto(subjectId, { nom, prenom, matricule }, "");
-        return;
-      }
-      openCameraGate(subjectId, { nom, prenom, matricule });
+      // La caméra est désactivée : l'évaluation commence directement.
+      beginEvaluationAfterPhoto(subjectId, { nom, prenom, matricule }, "");
     }
 
     /********************************************************************
