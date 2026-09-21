@@ -1,2 +1,2 @@
-// Aucun sujet n'est disponible avant l'ouverture de la prochaine évaluation.
+// Compatibilité : les deux sujets de démographie sont définis dans script.js.
 const NEUROCHIRURGIE_SUBJECTS = [];

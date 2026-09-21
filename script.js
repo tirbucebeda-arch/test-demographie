@@ -1,609 +1,964 @@
 /********************************************************************
      * CONFIGURATION PRINCIPALE
      * Tu peux modifier ici le mot de passe admin, les sujets, les dates,
-     * les questions, les réponses correctes, la durée et le barème.
+     * les questions, les réponses correctes et le barème.
      ********************************************************************/
     const ADMIN_PASSWORD = "admin123";
 
     const CONFIG = {
-      defaultMarking: { correct: 1, wrong: -1, empty: 0 },
-      subjects: [
-  {
-    "id": "demographie-evaluation-1",
-    "title": "Évaluation de démographie N° 1",
-    "matter": "Démographie — IDE3 / SFM3",
-    "description": "Sujet du Dr ABO LAZARE. Correction préparée par Tirbuce Beda.",
-    "instructions": "Répondez aux 40 questions. Les QCM peuvent comporter une ou plusieurs bonnes réponses.",
-    "duration": 30,
-    "programmed": true,
-    "openDate": "2026-09-20",
-    "openTime": "00:00",
-    "closeDate": "2030-12-31",
-    "closeTime": "23:59",
-    "marking": {
-      "correct": 1,
-      "wrong": -1,
-      "empty": 0
+  "defaultMarking": {
+    "correct": 1,
+    "wrong": -1,
+    "empty": 0
+  },
+  "subjects": [
+    {
+      "id": "demographie-sujet-1-2023",
+      "title": "Sujet 1 — Évaluation de démographie 2023",
+      "matter": "Démographie — Licence 3 IDE / SFM",
+      "description": "Sujet 1 de démographie. Correction préparée par Tirbuce Beda.",
+      "instructions": "Répondez à toutes les questions. Certaines questions peuvent comporter plusieurs bonnes réponses.",
+      "programmed": true,
+      "marking": {
+        "correct": 1,
+        "wrong": -1,
+        "empty": 0
+      },
+      "questions": [
+        {
+          "type": "qcm",
+          "text": "Parmi les éléments suivants, indiquer les mesures qui ont des répercussions évidentes sur les variables démographiques.",
+          "options": [
+            "Développement des fléaux sociaux",
+            "Amélioration des systèmes de santé",
+            "Opération d'aménagement rural",
+            "Sanction du phénomène des filles-mères"
+          ],
+          "explanation": "Le cours cite expressément l'amélioration des systèmes de santé et les opérations d'aménagement rural comme mesures ayant des répercussions évidentes sur les variables démographiques.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Orientation nouvelle de la démographie, p. 29.",
+          "answers": [
+            "Amélioration des systèmes de santé",
+            "Opération d'aménagement rural"
+          ],
+          "correct": [
+            "Amélioration des systèmes de santé",
+            "Opération d'aménagement rural"
+          ]
+        },
+        {
+          "type": "qcm",
+          "text": "Les facteurs influençant la fécondité sont :",
+          "options": [
+            "Les facteurs monographiques",
+            "Les facteurs économiques et sociaux",
+            "Les appartenances politiques",
+            "Les facteurs de modernité",
+            "Les variables intermédiaires"
+          ],
+          "explanation": "Les facteurs habituellement retenus sont les facteurs démographiques (écrit « monographiques » dans le sujet), économiques et sociaux, les facteurs de modernité et les variables intermédiaires. Les appartenances politiques ne constituent pas ici une catégorie du cours.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answers": [
+            "Les facteurs monographiques",
+            "Les facteurs économiques et sociaux",
+            "Les facteurs de modernité",
+            "Les variables intermédiaires"
+          ],
+          "correct": [
+            "Les facteurs monographiques",
+            "Les facteurs économiques et sociaux",
+            "Les facteurs de modernité",
+            "Les variables intermédiaires"
+          ]
+        },
+        {
+          "type": "qcm",
+          "text": "Dans une aire sanitaire, la densité est de 15 habitants/km² et la superficie est de 2 500 km². Quelle est la population ?",
+          "options": [
+            "16 666 habitants",
+            "37 500 habitants",
+            "25 000 habitants",
+            "15 000 habitants"
+          ],
+          "explanation": "Population = densité × superficie = 15 × 2 500 = 37 500 habitants.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, densité de population, p. 25.",
+          "answer": "37 500 habitants",
+          "correct": "37 500 habitants"
+        },
+        {
+          "type": "qcm",
+          "text": "Dans cette aire sanitaire, la population urbaine est de 7 500 habitants. Quelle est la proportion de la population rurale ?",
+          "options": [
+            "62,50 %",
+            "37,50 %",
+            "20 %",
+            "80 %"
+          ],
+          "explanation": "Population rurale = 37 500 - 7 500 = 30 000. Proportion rurale = 30 000 / 37 500 × 100 = 80 %.",
+          "source": "Sujet fourni, données des questions 3 et 4 ; Cours DEMOGRAPHIE L2 INFAS 2025-2026, p. 25.",
+          "answer": "80 %",
+          "correct": "80 %"
+        },
+        {
+          "type": "qcm",
+          "text": "La fréquence des naissances au sein de la sous-population des femmes en âge de procréer constitue :",
+          "options": [
+            "Le calendrier de fécondité",
+            "La natalité",
+            "La fécondité"
+          ],
+          "explanation": "La natalité rapporte les naissances à l'ensemble de la population, tandis que la fécondité les rapporte aux femmes en âge de procréer.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "La fécondité",
+          "correct": "La fécondité"
+        },
+        {
+          "type": "qcm",
+          "text": "Parmi les propositions suivantes, quels sont les facteurs culturels, économiques et sociaux influençant la fécondité ?",
+          "options": [
+            "L'activité économique",
+            "La proportion des femmes mariées chez les femmes en âge de reproduction",
+            "La pratique de la contraception",
+            "La stérilité permanente",
+            "Le groupe ethnique",
+            "Le statut de la femme"
+          ],
+          "explanation": "L'activité économique, le groupe ethnique et le statut de la femme relèvent des facteurs économiques, culturels et sociaux. Le mariage, la contraception et la stérilité relèvent plutôt des variables intermédiaires de la fécondité.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answers": [
+            "L'activité économique",
+            "Le groupe ethnique",
+            "Le statut de la femme"
+          ],
+          "correct": [
+            "L'activité économique",
+            "Le groupe ethnique",
+            "Le statut de la femme"
+          ]
+        },
+        {
+          "type": "qcm",
+          "text": "Dans l'analyse de la fécondité comme phénomène renouvelable, quelles sont les trois questions auxquelles on cherche à répondre ?",
+          "options": [
+            "Intensité des premiers décès",
+            "Intensité des premières naissances",
+            "Intensité du phénomène",
+            "Calendrier vaccinal",
+            "Calendrier du phénomène"
+          ],
+          "explanation": "L'analyse distingue l'entrée dans le phénomène (première naissance), l'intensité totale du phénomène et son calendrier. Les décès et le calendrier vaccinal ne répondent pas à cette analyse de la fécondité.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answers": [
+            "Intensité des premières naissances",
+            "Intensité du phénomène",
+            "Calendrier du phénomène"
+          ],
+          "correct": [
+            "Intensité des premières naissances",
+            "Intensité du phénomène",
+            "Calendrier du phénomène"
+          ]
+        },
+        {
+          "type": "qcm",
+          "text": "Calculer le rapport de masculinité si les hommes représentent 40 % de la population totale.",
+          "options": [
+            "40,67 %",
+            "66,67 %",
+            "150 %",
+            "76,67 %"
+          ],
+          "explanation": "Les femmes représentent 60 %. Rapport de masculinité = hommes / femmes × 100 = 40 / 60 × 100 = 66,67 %.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, structure par sexe, p. 20.",
+          "answer": "66,67 %",
+          "correct": "66,67 %"
+        },
+        {
+          "type": "qcm",
+          "text": "Sur la pyramide sanitaire ivoirienne, où se situe un dispensaire rural ?",
+          "options": [
+            "Niveau intermédiaire",
+            "Niveau tertiaire",
+            "Niveau périphérique",
+            "Versant prestataire",
+            "Versant administratif"
+          ],
+          "explanation": "Un dispensaire rural est un établissement de premier contact : il appartient au niveau périphérique et au versant prestataire.",
+          "source": "Connaissances générales de santé publique (complément)",
+          "answers": [
+            "Niveau périphérique",
+            "Versant prestataire"
+          ],
+          "correct": [
+            "Niveau périphérique",
+            "Versant prestataire"
+          ]
+        },
+        {
+          "type": "qcm",
+          "text": "Indiquer l'âge médian de la population suivante : 16 ans : 3 000 ; 20 ans : 9 000 ; 24 ans : 3 000 ; 28 ans : 4 000 ; 32 ans : 10 000 ; 36 ans : 1 000.",
+          "options": [
+            "36 ans",
+            "20 ans",
+            "32 ans",
+            "16 ans",
+            "24 ans",
+            "28 ans"
+          ],
+          "explanation": "L'effectif total est 30 000 et N/2 = 15 000. L'effectif cumulé atteint 15 000 à 24 ans. Remarque : avec la définition stricte fondée sur les deux observations centrales d'une série paire, les positions 15 000 et 15 001 correspondent à 24 et 28 ans, soit 26 ans ; cette valeur n'est pas proposée. L'option attendue par le sujet est donc 24 ans.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "24 ans",
+          "correct": "24 ans"
+        },
+        {
+          "type": "qcm",
+          "text": "Avec une densité de 85 habitants/km² et une superficie de 322 462 km², quelle population obtient-on ?",
+          "options": [
+            "27 027 409 habitants",
+            "27 409 270 habitants",
+            "24 709 270 habitants",
+            "24 027 409 habitants"
+          ],
+          "explanation": "Population = 85 × 322 462 = 27 409 270 habitants.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, densité de population, p. 25.",
+          "answer": "27 409 270 habitants",
+          "correct": "27 409 270 habitants"
+        },
+        {
+          "type": "qcm",
+          "text": "Quelles sont les caractéristiques du recensement de la population ?",
+          "options": [
+            "Le dénombrement collectif",
+            "L'exhaustivité",
+            "La globalité",
+            "La simultanéité",
+            "La périodicité"
+          ],
+          "explanation": "Le recensement doit couvrir toute la population et tout le territoire, se rapporter à une même période de référence et être répété périodiquement. Le dénombrement est individuel, non collectif.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Sources de données démographiques, recensement, p. 16-18.",
+          "answers": [
+            "L'exhaustivité",
+            "La globalité",
+            "La simultanéité",
+            "La périodicité"
+          ],
+          "correct": [
+            "L'exhaustivité",
+            "La globalité",
+            "La simultanéité",
+            "La périodicité"
+          ]
+        },
+        {
+          "type": "qcd",
+          "text": "Dans l'évolution récente des politiques de population en Afrique, le discours nataliste s'est concrétisé par des dispositions législatives telles que les allocations familiales.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Le cours mentionne le discours nataliste et cite les allocations familiales parmi les dispositions législatives correspondantes.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Orientation nouvelle de la démographie, p. 29.",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "L'âge moyen à la maternité est l'âge moyen des individus à la naissance de leurs enfants.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Il s'agit de l'âge moyen des mères à la naissance de leurs enfants, et non de l'ensemble des individus.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcd",
+          "text": "Une cohorte est un ensemble d'individus ayant vécu en même temps un même événement semblable appelé événement d'arrivée.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "L'événement commun est appelé événement d'origine, non événement d'arrivée.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Généralités, cohorte, p. 8.",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcd",
+          "text": "Un immigrant est une personne qui quitte son pays pour aller vivre à l'étranger.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "La personne qui quitte son pays est un émigrant. L'immigrant est considéré du point de vue du pays d'accueil où il entre pour s'établir.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, p. 23-24.",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcd",
+          "text": "Le rapport de masculinité d'une population de 250 000 habitants dont 60 % sont des femmes est de 40 %.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Les hommes représentent 40 %. Rapport de masculinité = 40 / 60 × 100 = 66,67 %.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, p. 20.",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcd",
+          "text": "Un effet négatif des migrations internationales sur le pays d'origine est la perturbation de l'organisation des sociétés.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Le départ touche souvent les jeunes adultes et peut perturber l'organisation sociale du pays ou de la région d'origine.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, effets économiques, p. 27.",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "La migration est un phénomène qui transfère la résidence d'un individu d'un lieu d'origine à un lieu de destination.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "La migration implique un déplacement accompagné d'un changement de résidence entre une origine et une destination.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, p. 23-24.",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "Les migrations régionales sont les déplacements pendulaires quotidiens donnant naissance aux communes-dortoirs et permettant de délimiter un bassin d'emploi.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Cette description correspond aux migrations ou mobilités locales pendulaires, et non aux migrations régionales.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, typologie des migrations, p. 23-24.",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcd",
+          "text": "Un effet positif des migrations internationales est l'amélioration du système de production par l'accumulation du capital liée à la pression sur les salaires.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Le cours classe cet effet parmi les effets économiques positifs des migrations internationales sur le pays d'accueil.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, effets sur le pays d'accueil, p. 26.",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "La descendance finale est le nombre moyen de naissances par femme d'une génération au début de la vie génésique.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "La descendance finale est mesurée à la fin de la vie génésique de la génération considérée.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcd",
+          "text": "L'accessibilité géographique et financière aux méthodes contraceptives constitue un facteur institutionnel et politique influençant la fécondité.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "L'organisation des services, leur accessibilité et les politiques de planification familiale agissent sur l'utilisation de la contraception et donc sur la fécondité.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "Le taux général de fécondité se calcule en rapportant les naissances vivantes d'une année au nombre total de femmes enceintes de la même année.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Le dénominateur est l'effectif moyen des femmes en âge de procréer, généralement 15 à 49 ans, et non le nombre de femmes enceintes.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcd",
+          "text": "Le recensement est l'ensemble des opérations consistant à recueillir, grouper, analyser et publier les données démographiques, économiques et sociales de tous les habitants d'un territoire à un moment donné.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Cette formulation correspond à la définition du recensement présentée dans le cours.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Sources de données démographiques, p. 16.",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "Un objectif du recensement est de fournir l'effectif partiel de la population et sa distribution selon quelques caractères simples.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Le recensement vise l'effectif total et une distribution détaillée de la population ; l'expression « effectif partiel » est incorrecte.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Sources de données démographiques, recensement, p. 16-18.",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcm",
+          "text": "La population était de 18 000 habitants en 2021, avec un taux d'accroissement annuel de 5 %. Calculer la population en 2023.",
+          "options": [
+            "19 500 habitants",
+            "19 845 habitants",
+            "18 181 habitants",
+            "18 180 habitants"
+          ],
+          "explanation": "Projection composée : P2023 = 18 000 × (1 + 0,05)² = 19 845.",
+          "source": "Sujet fourni, étude de cas de Laoudi-Gan ; Connaissances générales de démographie (utilisées en complément du cours fourni).",
+          "answer": "19 845 habitants",
+          "correct": "19 845 habitants"
+        },
+        {
+          "type": "qcm",
+          "text": "Calculer la population des femmes en âge de reproduction en 2023.",
+          "options": [
+            "3 637 habitants",
+            "3 600 habitants",
+            "3 700 habitants",
+            "3 969 habitants"
+          ],
+          "explanation": "Selon le coefficient utilisé par le sujet, les femmes en âge de reproduction représentent 20 % de la population : 19 845 × 0,20 = 3 969.",
+          "source": "Sujet fourni, étude de cas de Laoudi-Gan ; coefficient démographique de l'exercice.",
+          "answer": "3 969 habitants",
+          "correct": "3 969 habitants"
+        },
+        {
+          "type": "qcm",
+          "text": "Avec 1 329 naissances vivantes et 3 969 femmes en âge de reproduction, calculer le taux général de fécondité.",
+          "options": [
+            "359,18 ‰",
+            "365,41 ‰",
+            "334,85 ‰",
+            "369,16 ‰"
+          ],
+          "explanation": "TGF = 1 329 / 3 969 × 1 000 = 334,85 ‰.",
+          "source": "Sujet fourni, étude de cas de Laoudi-Gan ; formule générale du TGF.",
+          "answer": "334,85 ‰",
+          "correct": "334,85 ‰"
+        },
+        {
+          "type": "qcm",
+          "text": "Avec 240 décès d'enfants de moins d'un an et 1 329 naissances vivantes, calculer le taux de mortalité infantile.",
+          "options": [
+            "1,21 %",
+            "12,10 %",
+            "13,20 %",
+            "18,06 %"
+          ],
+          "explanation": "TMI = 240 / 1 329 × 1 000 = 180,59 ‰, soit 18,06 %. Le sujet propose les résultats en pourcentage.",
+          "source": "Sujet fourni, étude de cas de Laoudi-Gan ; formule générale de la mortalité infantile.",
+          "answer": "18,06 %",
+          "correct": "18,06 %"
+        }
+      ]
     },
-    "questions": [
-      {
-        "type": "qcd",
-        "text": "La population de référence en démographie est la population totale et partielle sur laquelle porte un recensement ou une enquête démographique.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "La population de référence est l'ensemble, total ou partiel, sur lequel porte l'observation démographique.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, Population de référence."
+    {
+      "id": "demographie-sujet-2-2021-2022",
+      "title": "Sujet 2 — Évaluation de démographie 2021–2022",
+      "matter": "Démographie — Licence 3 IDE / SFM",
+      "description": "Sujet 2 de démographie. Correction préparée par Tirbuce Beda.",
+      "instructions": "Répondez à toutes les questions. Certaines questions peuvent comporter plusieurs bonnes réponses.",
+      "programmed": true,
+      "marking": {
+        "correct": 1,
+        "wrong": -1,
+        "empty": 0
       },
-      {
-        "type": "qcm",
-        "text": "L'âge modal est :",
-        "options": [
-          "La valeur ou modalité minimale d'une variable",
-          "L'âge qui regroupe l'effectif le plus élevé des individus",
-          "L'âge qui divise l'effectif de la population en deux groupes égaux"
-        ],
-        "answer": "L'âge qui regroupe l'effectif le plus élevé des individus",
-        "correct": "L'âge qui regroupe l'effectif le plus élevé des individus",
-        "explanation": "Le mode est la modalité dont l'effectif est le plus élevé. L'âge qui partage la population en deux groupes égaux est l'âge médian.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, 2.2.2 Âge modal et 2.2.3 Âge médian."
-      },
-      {
-        "type": "qcd",
-        "text": "La population de fait est constituée des personnes présentes sur le territoire au moment du recensement, quelle que soit la durée de leur séjour.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "La population de fait correspond aux personnes présentes au moment du dénombrement. La durée de six mois sert plutôt à apprécier la résidence habituelle dans la population de droit.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, I.1 Population de fait et I.2 Population de droit."
-      },
-      {
-        "type": "qcd",
-        "text": "Le rapport de masculinité est obtenu en rapportant l'effectif des femmes à celui des hommes.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Faux",
-        "correct": "Faux",
-        "explanation": "Le rapport de masculinité se calcule en divisant le nombre d'hommes par le nombre de femmes, puis en multipliant par 100.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, 2.1.1 Rapport de masculinité."
-      },
-      {
-        "type": "qcd",
-        "text": "Les caractéristiques socioculturelles et les caractéristiques de l'activité économique sont les autres types de structures de la population.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "Après l'âge et le sexe, le cours décrit des structures socioculturelles et des caractéristiques liées à l'activité économique.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, III Autres types de structure."
-      },
-      {
-        "type": "qcd",
-        "text": "La migration alternante correspond à des déplacements pendulaires hebdomadaires qui donnent naissance aux communes dortoirs, caractérisent les zones d'influence d'un type d'activité et permettent de délimiter le bassin d'emploi.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Faux",
-        "correct": "Faux",
-        "explanation": "La migration alternante décrite dans le cours est un déplacement pendulaire quotidien entre le domicile et le lieu de travail, et non hebdomadaire.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, Migration alternante."
-      },
-      {
-        "type": "qcm",
-        "text": "Un émigrant est défini comme :",
-        "options": [
-          "Une personne qui quitte son pays pour aller vivre à l'étranger",
-          "Une personne qui quitte son village pour aller vivre dans un village étranger",
-          "Une personne qui entre dans un pays étranger pour s'y établir",
-          "Une personne qui entre dans un village étranger pour s'y établir"
-        ],
-        "answer": "Une personne qui quitte son pays pour aller vivre à l'étranger",
-        "correct": "Une personne qui quitte son pays pour aller vivre à l'étranger",
-        "explanation": "Un émigrant est considéré du point de vue du territoire qu'il quitte. La personne qui entre dans un pays est un immigrant.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, Migrant."
-      },
-      {
-        "type": "qcm",
-        "text": "Les sources de données dans l'étude de la mobilité spatiale des populations sont :",
-        "options": [
-          "Les registres de consultations de l'hôpital",
-          "Les recensements de population",
-          "Les enquêtes démographiques",
-          "Les enquêtes de commodo et incommodo",
-          "Les registres des populations"
-        ],
-        "answers": [
-          "Les recensements de population",
-          "Les enquêtes démographiques",
-          "Les registres des populations"
-        ],
-        "correct": [
-          "Les recensements de population",
-          "Les enquêtes démographiques",
-          "Les registres des populations"
-        ],
-        "explanation": "Le cours retient les recensements, les enquêtes démographiques et les registres de population comme sources des données migratoires.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, II Sources des données."
-      },
-      {
-        "type": "qcm",
-        "text": "Quel type de personne n'est pas pris en compte dans la population de droit d'un territoire ?",
-        "options": [
-          "Un visiteur présent lors du passage des agents recenseurs",
-          "Un résident habituel temporairement absent",
-          "Un résident habituel présent",
-          "Un résident habituel en déplacement de courte durée"
-        ],
-        "answer": "Un visiteur présent lors du passage des agents recenseurs",
-        "correct": "Un visiteur présent lors du passage des agents recenseurs",
-        "explanation": "La population de droit comprend les résidents habituels présents et temporairement absents. Un visiteur relève de la population de fait du territoire visité, mais pas de sa population de droit.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, I.2 Population de droit."
-      },
-      {
-        "type": "qcm",
-        "text": "Un immigrant est défini comme :",
-        "options": [
-          "Une personne qui quitte son pays pour aller vivre à l'étranger",
-          "Une personne qui quitte son village pour aller vivre à l'étranger",
-          "Une personne qui entre dans un pays étranger pour s'y établir",
-          "Une personne qui entre dans un village étranger pour s'y établir"
-        ],
-        "answer": "Une personne qui entre dans un pays étranger pour s'y établir",
-        "correct": "Une personne qui entre dans un pays étranger pour s'y établir",
-        "explanation": "Un immigrant est une personne qui entre dans un pays étranger pour s'y établir.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, Migrant."
-      },
-      {
-        "type": "qcm",
-        "text": "Parmi les facteurs suivants, lesquels peuvent influencer la fécondité ?",
-        "options": [
-          "Les facteurs démographiques",
-          "Les variables intermédiaires",
-          "Les facteurs culturels, économiques et sociaux",
-          "Les appartenances politiques",
-          "Les facteurs environnementaux et liés à la modernisation"
-        ],
-        "answers": [
-          "Les facteurs démographiques",
-          "Les variables intermédiaires",
-          "Les facteurs culturels, économiques et sociaux",
-          "Les facteurs environnementaux et liés à la modernisation"
-        ],
-        "correct": [
-          "Les facteurs démographiques",
-          "Les variables intermédiaires",
-          "Les facteurs culturels, économiques et sociaux",
-          "Les facteurs environnementaux et liés à la modernisation"
-        ],
-        "explanation": "La fécondité dépend de facteurs démographiques et de variables intermédiaires, eux-mêmes influencés par le contexte culturel, économique, social et environnemental. L'appartenance politique n'est pas retenue ici comme catégorie directe du modèle.",
-        "source": "Connaissances démographiques générales, déterminants de la fécondité. Cette liste n'est pas détaillée dans les trois supports fournis."
-      },
-      {
-        "type": "qcd",
-        "text": "La population de droit ou population résidente est une population ayant son domicile habituel dans un territoire déterminé depuis plus de 6 mois.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "Le support retient une durée de séjour supérieure à six mois pour qualifier la résidence habituelle.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, I.2 Population de droit."
-      },
-      {
-        "type": "qcm",
-        "text": "L'effet négatif des migrations internationales sur le pays d'origine vise à :",
-        "options": [
-          "Constituer un capital utilisé à des fins de production",
-          "Perturber l'organisation des sociétés",
-          "Soulager le marché du travail",
-          "Améliorer la balance des paiements par les envois de fonds par les émigrants"
-        ],
-        "answer": "Perturber l'organisation des sociétés",
-        "correct": "Perturber l'organisation des sociétés",
-        "explanation": "Le départ, surtout des jeunes adultes, peut désorganiser la société et priver la région d'une partie de sa force de travail. Les autres propositions sont des effets potentiellement positifs.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, IV.4.2 Effets sur les pays d'origine."
-      },
-      {
-        "type": "qcm",
-        "text": "Quelles personnes appartiennent à la population de fait d'un territoire au moment du recensement ?",
-        "options": [
-          "Les résidents présents",
-          "Les résidents habituels temporairement absents",
-          "Les visiteurs présents lors du passage des agents recenseurs",
-          "Les personnes vivant habituellement dans un autre territoire et absentes lors du recensement"
-        ],
-        "answers": [
-          "Les résidents présents",
-          "Les visiteurs présents lors du passage des agents recenseurs"
-        ],
-        "correct": [
-          "Les résidents présents",
-          "Les visiteurs présents lors du passage des agents recenseurs"
-        ],
-        "explanation": "La population de fait regroupe les personnes effectivement présentes : résidents présents et visiteurs. Les résidents temporairement absents appartiennent à la population de droit.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, I.1 et I.2. Correction fondée sur les définitions du cours."
-      },
-      {
-        "type": "qcm",
-        "text": "Quel est le rapport de masculinité d'une population de 250 000 habitants comprenant 60 % de femmes ?",
-        "options": [
-          "25 hommes pour 100 femmes",
-          "40 hommes pour 100 femmes",
-          "60 hommes pour 100 femmes",
-          "66,67 hommes pour 100 femmes"
-        ],
-        "answer": "66,67 hommes pour 100 femmes",
-        "correct": "66,67 hommes pour 100 femmes",
-        "explanation": "Femmes = 250 000 x 60 % = 150 000. Hommes = 250 000 - 150 000 = 100 000. Rapport = 100 000 / 150 000 x 100 = 66,67 hommes pour 100 femmes.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, 2.1.1 Rapport de masculinité."
-      },
-      {
-        "type": "qcm",
-        "text": "La population de Koun-Fao est de 150 000 habitants au 31 décembre 2020 et de 180 000 habitants au 31 décembre 2021. Quelle est la population moyenne en 2021 ?",
-        "options": [
-          "75 000 habitants",
-          "330 000 habitants",
-          "165 000 habitants",
-          "90 000 habitants"
-        ],
-        "answer": "165 000 habitants",
-        "correct": "165 000 habitants",
-        "explanation": "Population moyenne = (population au début + population à la fin) / 2 = (150 000 + 180 000) / 2 = 165 000 habitants.",
-        "source": "Connaissances démographiques générales, formule de la population moyenne annuelle."
-      },
-      {
-        "type": "qcm",
-        "text": "Avec une population moyenne de 165 000 habitants et 330 décès en 2021, quel est le taux brut de mortalité de Koun-Fao ?",
-        "options": [
-          "2 pour cent",
-          "2,2 pour cent",
-          "2 pour mille",
-          "2,2 pour mille"
-        ],
-        "answer": "2 pour mille",
-        "correct": "2 pour mille",
-        "explanation": "Taux brut de mortalité = 330 / 165 000 x 1 000 = 2 décès pour 1 000 habitants.",
-        "source": "Connaissances démographiques générales, taux brut de mortalité."
-      },
-      {
-        "type": "qcm",
-        "text": "Choisir la bonne formule de la population moyenne au cours d'une année N :",
-        "options": [
-          "Pm = (P1/1/N + P31/12/N+1) / 2",
-          "Pm = (P1/1/N-1 + P31/12/N) / 2",
-          "Pm = (P1/1/N + P31/12/N) / 2"
-        ],
-        "answer": "Pm = (P1/1/N + P31/12/N) / 2",
-        "correct": "Pm = (P1/1/N + P31/12/N) / 2",
-        "explanation": "La population moyenne de l'année N est la moyenne de l'effectif au début et à la fin de cette même année.",
-        "source": "Connaissances démographiques générales, population moyenne annuelle."
-      },
-      {
-        "type": "qcm",
-        "text": "Quel est le rapport de masculinité d'une population de 50 000 habitants comprenant 80 % de femmes ?",
-        "options": [
-          "20 hommes pour 100 femmes",
-          "25 hommes pour 100 femmes",
-          "75 hommes pour 100 femmes",
-          "85 hommes pour 100 femmes"
-        ],
-        "answer": "25 hommes pour 100 femmes",
-        "correct": "25 hommes pour 100 femmes",
-        "explanation": "Femmes = 40 000 et hommes = 10 000. Rapport de masculinité = 10 000 / 40 000 x 100 = 25 hommes pour 100 femmes.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, 2.1.1 Rapport de masculinité."
-      },
-      {
-        "type": "qcm",
-        "text": "À Man en 2021, la population est de 250 000 habitants, les naissances vivantes sont de 3 000 et les femmes en âge de reproduction représentent 20 % de la population. Quel est le taux général de fécondité ?",
-        "options": [
-          "30 pour cent",
-          "60 pour cent",
-          "30 pour mille",
-          "60 pour mille"
-        ],
-        "answer": "60 pour mille",
-        "correct": "60 pour mille",
-        "explanation": "Femmes en âge de reproduction = 250 000 x 20 % = 50 000. Taux général de fécondité = 3 000 / 50 000 x 1 000 = 60 pour mille.",
-        "source": "Connaissances démographiques générales, taux général de fécondité."
-      },
-      {
-        "type": "qcm",
-        "text": "Quel est le taux de mortalité post-néonatale à Man si 35 décès de 28 à 364 jours sont observés pour 3 000 naissances vivantes ?",
-        "options": [
-          "14 pour mille",
-          "11,67 pour mille",
-          "17,1 pour mille"
-        ],
-        "answer": "11,67 pour mille",
-        "correct": "11,67 pour mille",
-        "explanation": "Taux = 35 / 3 000 x 1 000 = 11,67 décès post-néonatals pour 1 000 naissances vivantes.",
-        "source": "Connaissances démographiques générales, mortalité post-néonatale."
-      },
-      {
-        "type": "qcm",
-        "text": "Quel est le taux de mortalité néonatale précoce à Man si 25 décès de 0 à 7 jours sont observés pour 3 000 naissances vivantes ?",
-        "options": [
-          "8,33 pour mille",
-          "1,7 pour mille",
-          "7,1 pour mille"
-        ],
-        "answer": "8,33 pour mille",
-        "correct": "8,33 pour mille",
-        "explanation": "Taux = 25 / 3 000 x 1 000 = 8,33 décès néonatals précoces pour 1 000 naissances vivantes.",
-        "source": "Connaissances démographiques générales, mortalité néonatale précoce."
-      },
-      {
-        "type": "qcm",
-        "text": "La densité de la Côte d'Ivoire est de 85 habitants/km² pour 322 462 km². Quelle population correspond à ces données ?",
-        "options": [
-          "27 027 409 habitants",
-          "27 409 270 habitants",
-          "24 709 270 habitants",
-          "24 027 409 habitants"
-        ],
-        "answer": "27 409 270 habitants",
-        "correct": "27 409 270 habitants",
-        "explanation": "Population = densité x superficie = 85 x 322 462 = 27 409 270 habitants.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, 2.1.1 Densité de population."
-      },
-      {
-        "type": "qcm",
-        "text": "Quelles sont les principales sources permettant de recueillir des données sur la mortalité ?",
-        "options": [
-          "L'état civil",
-          "Les fichiers administratifs et registres de population",
-          "Les enquêtes démographiques",
-          "Les recensements de population",
-          "Les décès eux-mêmes"
-        ],
-        "answers": [
-          "L'état civil",
-          "Les fichiers administratifs et registres de population",
-          "Les enquêtes démographiques",
-          "Les recensements de population"
-        ],
-        "correct": [
-          "L'état civil",
-          "Les fichiers administratifs et registres de population",
-          "Les enquêtes démographiques",
-          "Les recensements de population"
-        ],
-        "explanation": "L'état civil, les recensements, les enquêtes et certains fichiers constituent des sources de données. Les décès sont les événements étudiés, pas une source de collecte.",
-        "source": "SOURCES DE DONNEES DEMO, diapositives 5 à 23 ; DEMOGRAPHIE L2 INFAS 2025-2026, Sources de données démographiques."
-      },
-      {
-        "type": "qcm",
-        "text": "Quel est le taux de mortalité néonatale tardive à Man si 40 décès de 8 à 27 jours sont observés pour 3 000 naissances vivantes ?",
-        "options": [
-          "1,7 pour mille",
-          "7,1 pour mille",
-          "13,33 pour mille"
-        ],
-        "answer": "13,33 pour mille",
-        "correct": "13,33 pour mille",
-        "explanation": "Taux = 40 / 3 000 x 1 000 = 13,33 décès néonatals tardifs pour 1 000 naissances vivantes.",
-        "source": "Connaissances démographiques générales, mortalité néonatale tardive."
-      },
-      {
-        "type": "qcm",
-        "text": "Quel est le taux de mortalité néonatale à Man avec 25 décès précoces et 40 décès tardifs pour 3 000 naissances vivantes ?",
-        "options": [
-          "21,67 pour mille",
-          "11,67 pour mille",
-          "8,33 pour mille",
-          "13,33 pour mille"
-        ],
-        "answer": "21,67 pour mille",
-        "correct": "21,67 pour mille",
-        "explanation": "Décès néonatals = 25 + 40 = 65. Taux = 65 / 3 000 x 1 000 = 21,67 décès néonatals pour 1 000 naissances vivantes.",
-        "source": "Connaissances démographiques générales, mortalité néonatale."
-      },
-      {
-        "type": "qcd",
-        "text": "L'objet de la démographie est la population humaine.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "La population humaine constitue l'objet d'étude de la démographie.",
-        "source": "COURS DE DEMOGRAPHIE GENERALITE DION 2026, diapositive 17 ; DEMOGRAPHIE L2 INFAS 2025-2026, Généralités IV."
-      },
-      {
-        "type": "qcm",
-        "text": "Parmi les propositions suivantes, lesquelles ne sont pas présentées comme des composantes principales autonomes de la démographie dans le cours ?",
-        "options": [
-          "La démographie pure ou rationnelle",
-          "La démographie théorique",
-          "La démographie quantitative",
-          "La démographie planétaire ou globale",
-          "La démographie économique et sociale",
-          "La démographie historique"
-        ],
-        "answers": [
-          "La démographie théorique",
-          "La démographie quantitative"
-        ],
-        "correct": [
-          "La démographie théorique",
-          "La démographie quantitative"
-        ],
-        "explanation": "La démographie théorique et la démographie quantitative sont présentées comme des éléments de la démographie pure. Les propositions A, D, E et F sont des composantes principales citées dans le cours.",
-        "source": "COURS DE DEMOGRAPHIE GENERALITE DION 2026, diapositives 18 à 25 ; DEMOGRAPHIE L2 INFAS 2025-2026, Généralités V."
-      },
-      {
-        "type": "qcd",
-        "text": "La densité globale d'un pays se définit par le nombre total d'habitants divisé par sa superficie en km².",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "La densité globale est le rapport entre la population totale et la superficie du territoire.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, 2.1.1 Densité de population."
-      },
-      {
-        "type": "qcd",
-        "text": "L'âge moyen à la maternité est l'âge moyen des mères à la naissance de leurs enfants.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "Cet indicateur résume l'âge moyen des femmes au moment des naissances observées.",
-        "source": "Connaissances démographiques générales, indicateurs de fécondité."
-      },
-      {
-        "type": "qcd",
-        "text": "La cohorte est un ensemble d'individus qui ont vécu en même temps un événement semblable appelé événement d'origine.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "Le partage d'un même événement origine au même moment définit la cohorte.",
-        "source": "COURS DE DEMOGRAPHIE GENERALITE DION 2026, diapositive 13 ; DEMOGRAPHIE L2 INFAS 2025-2026, Généralités I.1.8."
-      },
-      {
-        "type": "qcd",
-        "text": "La population d'une localité au 31 décembre de l'année N-1 est identique à celle de ladite localité au 1er janvier de l'année N.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "Par convention de continuité, l'effectif de clôture au 31 décembre N-1 correspond à l'effectif d'ouverture au 1er janvier N, en l'absence d'un événement intercalé.",
-        "source": "Connaissances démographiques générales, repérage temporel des populations."
-      },
-      {
-        "type": "qcd",
-        "text": "Une observation de suivi est un mode d'observation dans lequel les événements relatifs à une même personne sont rapprochés afin de les saisir dans leur succession.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "Le rapprochement des événements concernant une même personne permet de suivre leur succession dans le temps.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Généralités, Observation de suivi."
-      },
-      {
-        "type": "qcd",
-        "text": "L'état de la population est l'effectif et la composition de la population selon divers critères variés.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "L'état décrit l'effectif et la composition selon l'âge, le sexe, l'état matrimonial, l'état de santé ou d'autres critères.",
-        "source": "COURS DE DEMOGRAPHIE GENERALITE DION 2026, diapositive 7 ; DEMOGRAPHIE L2 INFAS 2025-2026, Généralités I.1.3."
-      },
-      {
-        "type": "qcd",
-        "text": "La mortalité juvénile est le décès qui survient entre 0 et 4 ans.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Faux",
-        "correct": "Faux",
-        "explanation": "La mortalité juvénile concerne habituellement les décès de 1 à 4 ans. Les décès avant un an relèvent de la mortalité infantile ; l'ensemble 0 à 4 ans correspond à la mortalité infanto-juvénile ou des moins de cinq ans.",
-        "source": "Connaissances démographiques et sanitaires générales, indicateurs de mortalité de l'enfant."
-      },
-      {
-        "type": "qcd",
-        "text": "Le taux général de fécondité est un indicateur démographique.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "Il rapporte les naissances vivantes à l'effectif des femmes en âge de procréer au cours de la période.",
-        "source": "Connaissances démographiques générales, indicateurs de fécondité."
-      },
-      {
-        "type": "qcd",
-        "text": "La projection de population permet d'obtenir la population exacte d'une localité.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Faux",
-        "correct": "Faux",
-        "explanation": "Une projection fournit une estimation future fondée sur des hypothèses. Elle ne donne pas un effectif futur exact.",
-        "source": "DEMOGRAPHIE L2 INFAS 2025-2026, Orientation nouvelle de la démographie, Introduction et I."
-      },
-      {
-        "type": "qcd",
-        "text": "Les décès influencent l'accroissement naturel.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Vrai",
-        "correct": "Vrai",
-        "explanation": "L'accroissement naturel résulte de la différence entre les naissances et les décès. Une augmentation des décès réduit donc cet accroissement.",
-        "source": "COURS DE DEMOGRAPHIE GENERALITE DION 2026, diapositive 26 ; connaissances démographiques générales."
-      },
-      {
-        "type": "qcd",
-        "text": "La natalité désigne la fréquence des naissances au sein de la sous-population des femmes en âge de procréer.",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": "Faux",
-        "correct": "Faux",
-        "explanation": "La natalité rapporte les naissances à l'ensemble de la population. La fréquence des naissances chez les femmes en âge de procréer relève de la fécondité.",
-        "source": "Connaissances démographiques générales, distinction natalité et fécondité."
-      },
-      {
-        "type": "qcm",
-        "text": "Les variables intermédiaires des facteurs influençant la fécondité sont :",
-        "options": [
-          "La mortalité",
-          "La proportion des femmes mariées chez les femmes en âge de reproduction",
-          "La pratique de la contraception et la stérilité permanente",
-          "Le groupe ethnique",
-          "Le statut de la femme",
-          "L'infertilité post-partum"
-        ],
-        "answers": [
-          "La proportion des femmes mariées chez les femmes en âge de reproduction",
-          "La pratique de la contraception et la stérilité permanente",
-          "L'infertilité post-partum"
-        ],
-        "correct": [
-          "La proportion des femmes mariées chez les femmes en âge de reproduction",
-          "La pratique de la contraception et la stérilité permanente",
-          "L'infertilité post-partum"
-        ],
-        "explanation": "Les variables intermédiaires agissent directement sur l'exposition au risque de grossesse ou la capacité de concevoir : mariage ou union, contraception, stérilité et infertilité post-partum. Le groupe ethnique et le statut de la femme sont des facteurs de contexte.",
-        "source": "Connaissances démographiques générales, variables intermédiaires de la fécondité. Cette partie n'est pas développée dans les trois supports fournis."
-      }
-    ]
-  }
-]
-    };
+      "questions": [
+        {
+          "type": "qcd",
+          "text": "La densité globale d'un pays est le nombre total d'habitants divisé par la superficie en km².",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Densité globale = population totale / superficie totale.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, p. 25.",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "L'âge moyen à la maternité est l'âge moyen des mères à la naissance de leurs enfants.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "La définition est correcte.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "Une cohorte est un ensemble d'individus ayant vécu en même temps un même événement semblable appelé événement d'origine.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "C'est la définition donnée par le cours.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Généralités, p. 8.",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "La population d'une localité au 31 décembre de l'année N-1 est identique à celle de cette localité au 1er janvier de l'année N.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Ces deux instants se suivent immédiatement ; en projection démographique, le stock de fin d'année devient le stock initial de l'année suivante.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "Une cohorte est un ensemble d'individus ayant vécu en même temps un même événement semblable appelé événement d'origine.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "La question est identique à la question 3 et la définition est correcte.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Généralités, p. 8.",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "Une observation de suivi est un mode d'observation où les événements relatifs à une même personne sont distancés les uns des autres afin de les saisir dans leur succession.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Le cours précise que ces événements sont rapprochés les uns des autres, et non distancés.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Généralités, observation de suivi, p. 8.",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcd",
+          "text": "L'état de la population est l'effectif et la composition de la population selon divers critères.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "C'est la définition donnée dans le cours.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Généralités, p. 7.",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "La mortalité juvénile désigne les décès survenant entre 0 et 4 ans.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "La mortalité juvénile concerne généralement les enfants de 1 à 4 ans. De 0 à 4 ans, on parle de mortalité infanto-juvénile.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcd",
+          "text": "Le taux général de fécondité est un indicateur démographique.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Il mesure la fréquence des naissances parmi les femmes en âge de procréer.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcd",
+          "text": "La projection de population permet d'obtenir la population exacte d'une localité.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "Une projection fournit une estimation future fondée sur des hypothèses ; elle ne donne pas un effectif exact.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Orientation nouvelle de la démographie, projections, p. 28.",
+          "answer": "Faux",
+          "correct": "Faux"
+        },
+        {
+          "type": "qcd",
+          "text": "Les décès influencent l'accroissement naturel.",
+          "options": [
+            "Vrai",
+            "Faux"
+          ],
+          "explanation": "L'accroissement naturel correspond à la différence entre les naissances et les décès.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Vrai",
+          "correct": "Vrai"
+        },
+        {
+          "type": "qcm",
+          "text": "À Man en 2021, la population est de 250 000 habitants, avec 3 000 naissances vivantes et 20 % de femmes en âge de reproduction. Calculer le taux général de fécondité.",
+          "options": [
+            "30 %",
+            "60 %",
+            "30 ‰",
+            "60 ‰"
+          ],
+          "explanation": "Femmes en âge de reproduction = 250 000 × 20 % = 50 000. TGF = 3 000 / 50 000 × 1 000 = 60 ‰.",
+          "source": "Sujet fourni, étude de cas de Man ; formule générale du TGF.",
+          "answer": "60 ‰",
+          "correct": "60 ‰"
+        },
+        {
+          "type": "qcm",
+          "text": "À Man, 35 décès ont été enregistrés entre 28 et 364 jours pour 3 000 naissances vivantes. Calculer le taux de mortalité post-néonatale.",
+          "options": [
+            "1,4 %",
+            "1,17 %",
+            "1,71 %"
+          ],
+          "explanation": "35 / 3 000 × 100 = 1,1667 %, arrondi à 1,17 %.",
+          "source": "Sujet fourni, tableau de l'étude de cas de Man ; formule générale de mortalité post-néonatale.",
+          "answer": "1,17 %",
+          "correct": "1,17 %"
+        },
+        {
+          "type": "qcm",
+          "text": "À Man, 25 décès ont été enregistrés entre 0 et 7 jours pour 3 000 naissances vivantes. Calculer le taux de mortalité néonatale précoce.",
+          "options": [
+            "0,83 %",
+            "0,17 %",
+            "0,71 %"
+          ],
+          "explanation": "25 / 3 000 × 100 = 0,8333 %, arrondi à 0,83 %.",
+          "source": "Sujet fourni, tableau de l'étude de cas de Man ; formule générale de mortalité néonatale précoce.",
+          "answer": "0,83 %",
+          "correct": "0,83 %"
+        },
+        {
+          "type": "qcm",
+          "text": "À Man, 40 décès ont été enregistrés entre 9 et 27 jours pour 3 000 naissances vivantes. Calculer le taux de mortalité néonatale tardive.",
+          "options": [
+            "1,33 %",
+            "0,17 %",
+            "1,71 %"
+          ],
+          "explanation": "40 / 3 000 × 100 = 1,3333 %, arrondi à 1,33 %.",
+          "source": "Sujet fourni, tableau de l'étude de cas de Man ; formule générale de mortalité néonatale tardive.",
+          "answer": "1,33 %",
+          "correct": "1,33 %"
+        },
+        {
+          "type": "qcm",
+          "text": "Avec une densité de 85 habitants/km² et une superficie de 322 462 km², quelle est la population ?",
+          "options": [
+            "27 027 409 habitants",
+            "27 409 270 habitants",
+            "24 709 270 habitants",
+            "24 027 409 habitants"
+          ],
+          "explanation": "85 × 322 462 = 27 409 270 habitants.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, p. 25.",
+          "answer": "27 409 270 habitants",
+          "correct": "27 409 270 habitants"
+        },
+        {
+          "type": "qcm",
+          "text": "À Abengourou, la population totale est de 400 000 habitants et la population urbaine de 140 000. Calculer la population rurale.",
+          "options": [
+            "140 000 habitants",
+            "200 000 habitants",
+            "260 000 habitants",
+            "160 000 habitants"
+          ],
+          "explanation": "Population rurale = 400 000 - 140 000 = 260 000.",
+          "source": "Sujet fourni, étude de cas d'Abengourou.",
+          "answer": "260 000 habitants",
+          "correct": "260 000 habitants"
+        },
+        {
+          "type": "qcm",
+          "text": "La superficie totale est de 5 200 km² et la superficie urbaine de 1 200 km². Calculer la densité rurale.",
+          "options": [
+            "56 habitants/km²",
+            "65 habitants/km²",
+            "217 habitants/km²",
+            "117 habitants/km²"
+          ],
+          "explanation": "Superficie rurale = 5 200 - 1 200 = 4 000 km². Densité rurale = 260 000 / 4 000 = 65 habitants/km².",
+          "source": "Sujet fourni ; Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, p. 25.",
+          "answer": "65 habitants/km²",
+          "correct": "65 habitants/km²"
+        },
+        {
+          "type": "qcm",
+          "text": "Calculer la densité urbaine du département d'Abengourou.",
+          "options": [
+            "56 habitants/km²",
+            "65 habitants/km²",
+            "217 habitants/km²",
+            "117 habitants/km²"
+          ],
+          "explanation": "140 000 / 1 200 = 116,67 habitants/km², arrondi à 117.",
+          "source": "Sujet fourni ; Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, p. 25.",
+          "answer": "117 habitants/km²",
+          "correct": "117 habitants/km²"
+        },
+        {
+          "type": "qcm",
+          "text": "Si 80 % de la superficie rurale est agricole, calculer la superficie agricole.",
+          "options": [
+            "4 160 km²",
+            "1 200 km²",
+            "960 km²",
+            "3 200 km²"
+          ],
+          "explanation": "Superficie agricole = 4 000 × 80 % = 3 200 km².",
+          "source": "Sujet fourni, étude de cas d'Abengourou.",
+          "answer": "3 200 km²",
+          "correct": "3 200 km²"
+        },
+        {
+          "type": "qcm",
+          "text": "Calculer la densité agricole du département d'Abengourou.",
+          "options": [
+            "81 habitants/km²",
+            "82 habitants/km²",
+            "44 habitants/km²",
+            "58 habitants/km²"
+          ],
+          "explanation": "Densité agricole = population rurale / superficie agricole = 260 000 / 3 200 = 81,25 habitants/km². La consigne impose l'entier supérieur : 82. Avec un arrondi classique au plus proche, on obtiendrait 81.",
+          "source": "Sujet fourni ; Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, densité agricole, p. 25.",
+          "answer": "82 habitants/km²",
+          "correct": "82 habitants/km²"
+        },
+        {
+          "type": "qcm",
+          "text": "Calculer le taux d'urbanisation du département d'Abengourou.",
+          "options": [
+            "0,35 (35 %)",
+            "0,54 (54 %)",
+            "0,53 (53 %)"
+          ],
+          "explanation": "Taux d'urbanisation = 140 000 / 400 000 = 0,35, soit 35 %.",
+          "source": "Sujet fourni ; Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, taux d'urbanisation, p. 25.",
+          "answer": "0,35 (35 %)",
+          "correct": "0,35 (35 %)"
+        },
+        {
+          "type": "qcm",
+          "text": "L'intensité de la fécondité est :",
+          "options": [
+            "La fréquence des naissances dans l'ensemble de la population",
+            "La fréquence des naissances chez les femmes en âge de procréer",
+            "Le nombre moyen de naissances par femme d'une génération à la fin de la vie génésique"
+          ],
+          "explanation": "L'intensité finale de la fécondité d'une génération est mesurée par sa descendance finale, c'est-à-dire le nombre moyen d'enfants par femme à la fin de la vie génésique.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Le nombre moyen de naissances par femme d'une génération à la fin de la vie génésique",
+          "correct": "Le nombre moyen de naissances par femme d'une génération à la fin de la vie génésique"
+        },
+        {
+          "type": "qcm",
+          "text": "Un émigrant est :",
+          "options": [
+            "Une personne qui quitte son pays pour vivre à l'étranger",
+            "Une personne qui quitte son village pour vivre dans un village étranger",
+            "Une personne qui entre dans un pays étranger pour s'y établir",
+            "Une personne qui entre dans un village étranger pour s'y établir"
+          ],
+          "explanation": "L'émigrant est défini du point de vue du pays de départ.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, p. 23-24.",
+          "answer": "Une personne qui quitte son pays pour vivre à l'étranger",
+          "correct": "Une personne qui quitte son pays pour vivre à l'étranger"
+        },
+        {
+          "type": "qcm",
+          "text": "Un immigrant est :",
+          "options": [
+            "Une personne qui quitte son pays pour vivre à l'étranger",
+            "Une personne qui quitte son village pour vivre à l'étranger",
+            "Une personne qui entre dans un pays étranger pour s'y établir",
+            "Une personne qui entre dans un village étranger pour s'y établir"
+          ],
+          "explanation": "L'immigrant est défini du point de vue du pays d'accueil dans lequel il entre pour s'établir.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, p. 23-24.",
+          "answer": "Une personne qui entre dans un pays étranger pour s'y établir",
+          "correct": "Une personne qui entre dans un pays étranger pour s'y établir"
+        },
+        {
+          "type": "qcm",
+          "text": "Quelles sont les sources de données utilisées dans l'étude de la mobilité spatiale ?",
+          "options": [
+            "Registres de consultations de l'hôpital",
+            "Recensements de la population",
+            "Enquêtes démographiques",
+            "Enquêtes de commodo et incommodo",
+            "Registres des populations"
+          ],
+          "explanation": "Le cours cite les recensements, les enquêtes démographiques et les registres des populations.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, sources des données, p. 24.",
+          "answers": [
+            "Recensements de la population",
+            "Enquêtes démographiques",
+            "Registres des populations"
+          ],
+          "correct": [
+            "Recensements de la population",
+            "Enquêtes démographiques",
+            "Registres des populations"
+          ]
+        },
+        {
+          "type": "qcm",
+          "text": "Les facteurs influençant la fécondité sont :",
+          "options": [
+            "Facteurs monographiques",
+            "Variables intermédiaires",
+            "Facteurs culturels, économiques et sociaux",
+            "Appartenances politiques",
+            "Facteurs environnementaux et de modernité"
+          ],
+          "explanation": "Les catégories attendues sont les facteurs démographiques (écrit « monographiques »), les variables intermédiaires, les facteurs culturels, économiques et sociaux, ainsi que les facteurs environnementaux et de modernité.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answers": [
+            "Facteurs monographiques",
+            "Variables intermédiaires",
+            "Facteurs culturels, économiques et sociaux",
+            "Facteurs environnementaux et de modernité"
+          ],
+          "correct": [
+            "Facteurs monographiques",
+            "Variables intermédiaires",
+            "Facteurs culturels, économiques et sociaux",
+            "Facteurs environnementaux et de modernité"
+          ]
+        },
+        {
+          "type": "qcm",
+          "text": "Choisir les deux types d'individus non pris en compte dans la population de droit.",
+          "options": [
+            "Visiteurs au moment du recensement",
+            "Résidents absents au moment du recensement",
+            "Résidents présents",
+            "Résidents absents"
+          ],
+          "explanation": "La population de droit comprend les résidents présents et les résidents absents ; elle exclut les visiteurs. Les propositions B et D sont des doublons et décrivent des personnes incluses. Il n'existe donc pas deux bonnes réponses distinctes dans la liste.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "Visiteurs au moment du recensement",
+          "correct": "Visiteurs au moment du recensement"
+        },
+        {
+          "type": "qcm",
+          "text": "Quel est l'effet négatif des migrations internationales sur le pays d'origine ?",
+          "options": [
+            "Constituer un capital productif",
+            "Perturber l'organisation des sociétés",
+            "Soulager le marché du travail",
+            "Améliorer la balance des paiements par les envois de fonds"
+          ],
+          "explanation": "Le départ, notamment des jeunes adultes, peut perturber l'organisation des sociétés et priver la région de force de travail. Les autres propositions sont des effets positifs.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, Mobilité spatiale, p. 27.",
+          "answer": "Perturber l'organisation des sociétés",
+          "correct": "Perturber l'organisation des sociétés"
+        },
+        {
+          "type": "qcm",
+          "text": "Calculer le rapport de masculinité d'une population dont 60 % sont des femmes.",
+          "options": [
+            "25 %",
+            "40 %",
+            "60 %",
+            "66,67 %"
+          ],
+          "explanation": "Les hommes représentent 40 %. Rapport = 40 / 60 × 100 = 66,67 %.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, p. 20.",
+          "answer": "66,67 %",
+          "correct": "66,67 %"
+        },
+        {
+          "type": "qcm",
+          "text": "La population est de 150 000 habitants au 31 décembre 2020 et de 180 000 au 31 décembre 2021. Calculer la population moyenne de 2021.",
+          "options": [
+            "75 000 habitants",
+            "330 000 habitants",
+            "165 000 habitants",
+            "90 000 habitants"
+          ],
+          "explanation": "Population moyenne = (150 000 + 180 000) / 2 = 165 000.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "165 000 habitants",
+          "correct": "165 000 habitants"
+        },
+        {
+          "type": "qcm",
+          "text": "Avec 330 décès et une population moyenne de 165 000 habitants, calculer le taux brut de mortalité.",
+          "options": [
+            "2 %",
+            "2,2 %",
+            "2 ‰",
+            "2,2 ‰"
+          ],
+          "explanation": "Taux brut de mortalité = 330 / 165 000 × 1 000 = 2 ‰.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "2 ‰",
+          "correct": "2 ‰"
+        },
+        {
+          "type": "qcm",
+          "text": "Quelle est la formule correcte de la population moyenne au cours d'une année N ?",
+          "options": [
+            "(P au 1/1/N + P au 31/12/N+1) / 2",
+            "(P au 1/1/N-1 + P au 31/12/N) / 2",
+            "(P au 1/1/N + P au 31/12/N) / 2"
+          ],
+          "explanation": "La population moyenne de l'année N est la moyenne de la population au début et à la fin de cette même année.",
+          "source": "Connaissances générales de démographie (utilisées en complément du cours fourni)",
+          "answer": "(P au 1/1/N + P au 31/12/N) / 2",
+          "correct": "(P au 1/1/N + P au 31/12/N) / 2"
+        },
+        {
+          "type": "qcm",
+          "text": "Calculer le rapport de masculinité d'une population dont 80 % sont des femmes.",
+          "options": [
+            "20 %",
+            "25 %",
+            "75 %",
+            "80 %"
+          ],
+          "explanation": "Les hommes représentent 20 %. Rapport de masculinité = 20 / 80 × 100 = 25 %.",
+          "source": "Cours DEMOGRAPHIE L2 INFAS 2025-2026, État de la population, p. 20.",
+          "answer": "25 %",
+          "correct": "25 %"
+        }
+      ]
+    }
+  ]
+};
 
         /********************************************************************
      * VARIABLES GLOBALES
@@ -616,14 +971,12 @@
         let currentSubject = null;
     let currentStudent = null;
     let quizStartTime = null;
-    let timerInterval = null;
     let currentQuestionIndex = 0;
     let savedQuestionAnswers = {};
-    const QUESTION_DURATION_SECONDS = 30;
     const QUIZ_SETTINGS_KEY = "DEMOGRAPHIE_EVALUATION_quiz_settings_v3";
     const DEFAULT_QUIZ_SETTINGS = {
-      questionCount: 40,
-      displayMode: "one",
+      questionCount: 999,
+      displayMode: "all",
       questionType: "both",
       cameraEnabled: false,
       antiCheatEnabled: true
@@ -703,11 +1056,7 @@
     }
 
     function prepareSubjectForQuiz(subject) {
-      const selectedQuestions = selectQuizQuestions(subject.questions);
-      return {
-        ...cloneData(subject),
-        questions: shuffleForNewLearningSession(subject.id, selectedQuestions)
-      };
+      return cloneData(subject);
     }
 
     /********************************************************************
@@ -784,21 +1133,10 @@
     /********************************************************************
      * GESTION DES DATES ET STATUTS
      ********************************************************************/
-    function getDateTime(date, time) {
-      return new Date(`${date}T${time || "00:00"}:00`);
-    }
-
     function getSubjectStatus(subject) {
-      const now = new Date();
-      const open = getDateTime(subject.openDate, subject.openTime);
-      const close = getDateTime(subject.closeDate, subject.closeTime);
-      if (now < open) return { key: "locked", label: "Verrouillée", message: "Cette composition n’est pas encore disponible" };
-      if (now > close) return { key: "closed", label: "Terminée", message: "La composition est terminée" };
-      return { key: "available", label: "Disponible", message: "Composition disponible" };
-    }
-
-    function formatDateTime(date, time) {
-      return `${date} à ${time}`;
+      return subject && subject.programmed === true
+        ? { key: "available", label: "Disponible", message: "Sujet disponible" }
+        : { key: "locked", label: "Indisponible", message: "Ce sujet n’est pas disponible" };
     }
 
 
@@ -928,7 +1266,6 @@
      * PAGE ACCUEIL ÉTUDIANT
      ********************************************************************/
     function showHome() {
-      clearInterval(timerInterval);
       stopPageExitTracking();
       document.getElementById("homeView").classList.remove("hidden");
       document.getElementById("quizView").classList.add("hidden");
@@ -1005,40 +1342,32 @@
       if (!homeView) return;
 
       updateStudentHeader();
-
       const profile = getStudentProfile();
-      const programmedSubjects = subjects.filter(subject => subject.programmed === true);
-      const availableSubjects = programmedSubjects.filter(subject => getSubjectStatus(subject).key === "available");
+      const availableSubjects = subjects.filter(subject => subject.programmed === true);
 
-      const availableHtml = availableSubjects.length ? availableSubjects.map(availableSubject => `
+      const availableHtml = availableSubjects.length ? availableSubjects.map(subject => `
         <div class="student-evaluation-card">
           <div class="student-evaluation-head">
             <span class="student-status-pill available">Disponible</span>
-            <h4>${escapeHTML(availableSubject.title)}</h4>
+            <h4>${escapeHTML(subject.title)}</h4>
           </div>
-          <p class="student-evaluation-meta"><strong>Matière :</strong> ${escapeHTML(availableSubject.matter)}</p>
-          <p class="student-evaluation-meta"><strong>Durée :</strong> ${availableSubject.duration} min</p>
-          <p class="student-evaluation-meta"><strong>Questions :</strong> ${getQuizQuestionCount()} — ${getQuizTypeLabel()} — ${quizSettings.displayMode === "all" ? "toutes sur une page" : "question par question"}</p>
-          <p class="student-evaluation-meta"><strong>Fermeture :</strong> ${formatDateTime(availableSubject.closeDate, availableSubject.closeTime)}</p>
-          <button class="student-start-btn" onclick="startQuickEvaluation('${availableSubject.id}')">Commencer</button>
+          <p class="student-evaluation-meta"><strong>Matière :</strong> ${escapeHTML(subject.matter)}</p>
+          <p class="student-evaluation-meta"><strong>Questions :</strong> ${subject.questions.length} — toutes affichées sur une seule page</p>
+          <button class="student-start-btn" onclick="startQuickEvaluation('${subject.id}')">Commencer</button>
         </div>
-      `).join("") : `
-        <div class="student-empty-state">Évaluation test sera disponible le dimanche 20 septembre 2026 de 21 h à 21 h 30.</div>
-      `;
+      `).join("") : `<div class="student-empty-state">Aucun sujet disponible.</div>`;
 
       homeView.innerHTML = `
         <div class="student-dashboard">
           <section class="student-profile-card">
-            <h2>${profile.nomComplet}</h2>
-            <p>
-              <span>Nom et Prénoms :</span> <strong>${escapeHTML(profile.nomComplet)}</strong>
-            </p>
-            <button class="student-scroll-btn" onclick="document.getElementById('studentAvailableSection').scrollIntoView({behavior:'smooth', block:'start'})">Mes évaluations</button>
+            <h2>${escapeHTML(profile.nomComplet)}</h2>
+            <p><span>Nom et Prénoms :</span> <strong>${escapeHTML(profile.nomComplet)}</strong></p>
+            <button class="student-scroll-btn" onclick="document.getElementById('studentAvailableSection').scrollIntoView({behavior:'smooth', block:'start'})">Mes sujets</button>
           </section>
 
           <section id="studentAvailableSection" class="student-section-card">
-            <h3>Sujet disponible</h3>
-            <p class="student-section-note">Évaluation test sera disponible le dimanche 20 septembre 2026 de 21 h à 21 h 30.</p>
+            <h3>Sujets disponibles</h3>
+            <p class="student-section-note">Choisissez l’un des deux sujets de démographie. Il n’y a pas de chronomètre : toutes les questions du sujet s’affichent directement.</p>
             ${availableHtml}
           </section>
 
@@ -1066,46 +1395,15 @@
 
     function openQuizSettings() {
       const modal = document.getElementById("modal");
-      const max = getMaximumQuestionCount();
       modal.className = "modal";
       modal.innerHTML = `
         <div class="modal-content settings-modal-content">
-          <h2>⚙ Paramètres du quiz</h2>
-          <div class="settings-field">
-            <label for="settingsQuestionCount"><strong>Nombre de questions</strong></label>
-            <input id="settingsQuestionCount" type="number" min="1" max="${max}" value="${Math.min(quizSettings.questionCount, max)}">
-            <small id="settingsQuestionLimit" class="muted">Maximum disponible : ${max}</small>
-          </div>
-          <div class="settings-field">
-            <label for="settingsDisplayMode"><strong>Mode d’affichage</strong></label>
-            <select id="settingsDisplayMode">
-              <option value="one" ${quizSettings.displayMode === "one" ? "selected" : ""}>Question par question</option>
-              <option value="all" ${quizSettings.displayMode === "all" ? "selected" : ""}>Toutes les questions</option>
-            </select>
-          </div>
-          <div class="settings-field">
-            <label for="settingsQuestionType"><strong>Type de questions</strong></label>
-            <select id="settingsQuestionType" onchange="updateSettingsQuestionLimit()">
-              <option value="both" ${quizSettings.questionType === "both" ? "selected" : ""}>QCM et QCD</option>
-              <option value="qcm" ${quizSettings.questionType === "qcm" ? "selected" : ""}>QCM seulement</option>
-              <option value="qcd" ${quizSettings.questionType === "qcd" ? "selected" : ""}>QCD seulement (Vrai/Faux)</option>
-            </select>
-          </div>
-          <div class="settings-toggle-row">
-            <div>
-              <strong>Caméra</strong>
-              <small>Demander une photo avant de commencer le sujet.</small>
-            </div>
-            <label class="settings-switch">
-              <input id="settingsCameraEnabled" type="checkbox" disabled>
-              <span class="settings-switch-slider"></span>
-              <span class="settings-switch-state">Désactivée</span>
-            </label>
-          </div>
+          <h2>⚙ Paramètres</h2>
+          <p class="muted">Les sujets affichent toujours toutes leurs questions sur une seule page, sans chronomètre.</p>
           <div class="settings-toggle-row">
             <div>
               <strong>Anti-triche</strong>
-              <small>Détecter les sorties de page, changements d’application et raccourcis interdits.</small>
+              <small>Détecter les sorties de page pendant la composition.</small>
             </div>
             <label class="settings-switch">
               <input id="settingsAntiCheatEnabled" type="checkbox" ${quizSettings.antiCheatEnabled !== false ? "checked" : ""}>
@@ -1121,24 +1419,16 @@
     }
 
     function updateSettingsQuestionLimit() {
-      const type = document.getElementById("settingsQuestionType").value;
-      const max = getMaximumQuestionCount(type);
-      const input = document.getElementById("settingsQuestionCount");
-      input.max = max;
-      if (Number(input.value) > max) input.value = max;
-      document.getElementById("settingsQuestionLimit").textContent = `Maximum disponible : ${max}`;
+      // Affichage fixé : toutes les questions, sur une seule page.
     }
 
     function saveQuizSettings() {
-      const type = document.getElementById("settingsQuestionType").value;
-      const max = getMaximumQuestionCount(type);
-      const requested = Number(document.getElementById("settingsQuestionCount").value);
       quizSettings = {
-        questionCount: Math.max(1, Math.min(max, Number.isFinite(requested) ? Math.floor(requested) : 15)),
-        displayMode: document.getElementById("settingsDisplayMode").value,
-        questionType: type,
+        questionCount: 999,
+        displayMode: "all",
+        questionType: "both",
         cameraEnabled: false,
-        antiCheatEnabled: document.getElementById("settingsAntiCheatEnabled").checked
+        antiCheatEnabled: document.getElementById("settingsAntiCheatEnabled")?.checked !== false
       };
       localStorage.setItem(QUIZ_SETTINGS_KEY, JSON.stringify(quizSettings));
       closeModal();
@@ -1196,7 +1486,6 @@
       currentQuestionIndex = 0;
       savedQuestionAnswers = {};
       renderQuiz();
-      startTimer(QUESTION_DURATION_SECONDS);
       startPageExitTracking();
     }
 
@@ -1484,12 +1773,10 @@
       currentQuestionIndex = 0;
       savedQuestionAnswers = {};
       renderQuiz();
-      startTimer(QUESTION_DURATION_SECONDS);
       startPageExitTracking();
     }
 
     function logoutStudent() {
-      clearInterval(timerInterval);
       localStorage.removeItem("REVISION_LICENCE_1_ACTIVE_FULL_NAME");
       window.activeStudentFullName = "";
 
@@ -1533,56 +1820,29 @@
     function renderQuiz() {
       const quizView = document.getElementById("quizView");
       const totalQuestions = currentSubject.questions.length;
-      if (quizSettings.displayMode === "all") {
-        quizView.innerHTML = `
-          <div class="quiz-layout quiz-layout-single">
-            <div class="panel quiz-panel quiz-panel-clean">
-              <div class="question-timer-top question-timer-clean">
-                <strong id="timer" class="timer question-timer">${String(Math.floor((totalQuestions * QUESTION_DURATION_SECONDS) / 60)).padStart(2, "0")}:00</strong>
-                <div class="question-progress-wrap"><div id="questionProgressBar" class="question-progress-bar" style="width:100%"></div></div>
-              </div>
-              <form id="quizForm">
-                <p class="muted all-questions-note">${totalQuestions} questions affichées sur cette page.</p>
-                ${currentSubject.questions.map((question, index) => `
-                  <section class="all-question-block">
-                    <div class="all-question-number">Question ${index + 1} / ${totalQuestions}</div>
-                    ${renderQuestion(question, index)}
-                  </section>`).join("")}
-                <div class="question-navigation">
-                  <button type="button" class="btn-green" onclick="submitQuiz(false)">Valider ma composition</button>
-                </div>
-              </form>
-            </div>
-          </div>`;
-        restoreAllQuestionAnswers();
-        quizView.scrollIntoView({ behavior: "smooth", block: "start" });
-        return;
-      }
-      const q = currentSubject.questions[currentQuestionIndex];
-      const isLastQuestion = currentQuestionIndex >= totalQuestions - 1;
+      quizSettings.displayMode = "all";
+      quizSettings.questionType = "both";
 
       quizView.innerHTML = `
         <div class="quiz-layout quiz-layout-single">
           <div class="panel quiz-panel quiz-panel-clean">
-            <div class="question-timer-top question-timer-clean">
-              <strong id="timer" class="timer question-timer">00:30</strong>
-              <div class="question-progress-wrap" aria-label="Progression du temps restant">
-                <div id="questionProgressBar" class="question-progress-bar" style="width:100%"></div>
-              </div>
-            </div>
-
             <form id="quizForm">
-              ${renderQuestion(q, currentQuestionIndex)}
+              <div class="all-questions-header">
+                <h2>${escapeHTML(currentSubject.title)}</h2>
+                <p class="muted all-questions-note">${totalQuestions} questions — toutes affichées sur cette page.</p>
+              </div>
+              ${currentSubject.questions.map((question, index) => `
+                <section class="all-question-block">
+                  <div class="all-question-number">Question ${index + 1} / ${totalQuestions}</div>
+                  ${renderQuestion(question, index)}
+                </section>`).join("")}
               <div class="question-navigation">
-                <button type="button" class="btn-green" onclick="goToNextQuestion()">
-                  ${isLastQuestion ? "Valider ma composition" : "Question suivante"}
-                </button>
+                <button type="button" class="btn-green" onclick="submitQuiz(false)">Valider ma composition</button>
               </div>
             </form>
           </div>
-        </div>
-      `;
-      restoreCurrentQuestionAnswer();
+        </div>`;
+      restoreAllQuestionAnswers();
       quizView.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
@@ -1643,41 +1903,7 @@
       }
       currentQuestionIndex++;
       renderQuiz();
-      startTimer(QUESTION_DURATION_SECONDS);
     }
-
-    function startTimer(seconds) {
-      if (quizSettings.displayMode === "all") seconds = currentSubject.questions.length * QUESTION_DURATION_SECONDS;
-      let remaining = seconds;
-      updateTimerDisplay(remaining, seconds);
-      clearInterval(timerInterval);
-      timerInterval = setInterval(() => {
-        remaining--;
-        updateTimerDisplay(remaining, seconds);
-        if (remaining <= 0) {
-          clearInterval(timerInterval);
-          if (quizSettings.displayMode === "all") submitQuiz(true);
-          else goToNextQuestion();
-        }
-      }, 1000);
-    }
-
-    function updateTimerDisplay(seconds, totalSeconds = QUESTION_DURATION_SECONDS) {
-      const safeSeconds = Math.max(0, seconds);
-      const min = Math.floor(safeSeconds / 60).toString().padStart(2, "0");
-      const sec = (safeSeconds % 60).toString().padStart(2, "0");
-      const el = document.getElementById("timer");
-      if (el) el.textContent = `${min}:${sec}`;
-
-      const progress = document.getElementById("questionProgressBar");
-      if (progress) {
-        const percent = totalSeconds > 0 ? Math.max(0, Math.min(100, (safeSeconds / totalSeconds) * 100)) : 0;
-        progress.style.width = `${percent}%`;
-        progress.classList.toggle("warning", percent <= 35 && percent > 15);
-        progress.classList.toggle("danger", percent <= 15);
-      }
-    }
-
 
     function sameAnswers(studentAnswers, expectedAnswers) {
       const normalize = arr => arr.filter(Boolean).map(v => String(v).trim()).sort();
@@ -1692,7 +1918,6 @@
     }
 
     function submitQuiz(auto = false) {
-      clearInterval(timerInterval);
 
       let good = 0, bad = 0, empty = 0, score = 0;
       const marking = currentSubject.marking || CONFIG.defaultMarking;
@@ -1742,7 +1967,6 @@
       const pageExitDetected = hasRealPageExitDuringQuiz();
       const autoSend = pageExitDetected === true;
 
-      const usedSeconds = Math.round((new Date() - quizStartTime) / 1000);
       const result = {
         id: Date.now().toString(),
         date: new Date().toLocaleString("fr-FR"),
@@ -1759,7 +1983,6 @@
         empty,
         total: currentSubject.questions.length,
         answers,
-        usedTime: formatDuration(usedSeconds),
         pageExitCount,
         pageExitEvents,
         securityEvents: pageExitEvents,
@@ -1815,7 +2038,6 @@
             <div><strong>Bonnes réponses :</strong> ${result.good}</div>
             <div><strong>Mauvaises réponses :</strong> ${result.bad}</div>
             <div><strong>Sans réponse :</strong> ${result.empty}</div>
-            <div><strong>Temps utilisé :</strong> ${result.usedTime}</div>
             <div><strong>Incidents sécurité :</strong> ${Number(result.pageExitCount || 0)}</div>
             <div><strong>Détails sécurité :</strong><br>${renderSecurityEvents(result.pageExitEvents || result.securityEvents)}</div>
           </div>
@@ -1877,7 +2099,6 @@
     }
 
     function showAdmin() {
-      clearInterval(timerInterval);
       document.getElementById("homeView").classList.add("hidden");
       document.getElementById("quizView").classList.add("hidden");
       document.getElementById("resultView").classList.add("hidden");
@@ -1890,16 +2111,15 @@
       content.innerHTML = `
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Titre</th><th>Matière</th><th>Affichage accueil</th><th>Dates</th><th>Durée</th><th>Questions</th><th>Actions</th></tr></thead>
+            <thead><tr><th>Titre</th><th>Matière</th><th>Affichage accueil</th><th>Disponibilité</th><th>Questions</th><th>Actions</th></tr></thead>
             <tbody>
               ${subjects.map(s => `
                 <tr>
                   <td>${escapeHTML(s.title)}</td>
                   <td>${escapeHTML(s.matter)}</td>
                   <td><span class="badge ${s.programmed ? 'available' : 'locked'}">${s.programmed ? 'Programmé' : 'Non programmé'}</span></td>
-                  <td>Du ${formatDateTime(s.openDate, s.openTime)}<br>au ${formatDateTime(s.closeDate, s.closeTime)}</td>
-                  <td>${s.duration} min</td>
-                  <td>${getQuizQuestionCount()} tirées sur ${s.questions.length}</td>
+                  <td>Toujours disponible</td>
+                  <td>${s.questions.length}</td>
                   <td class="actions">
                     <button class="${s.programmed ? 'btn-dark' : 'btn-green'}" onclick="toggleProgrammed('${s.id}')">${s.programmed ? 'Retirer' : 'Programmer'}</button>
                     <button class="btn-orange" onclick="openSubjectEditor('${s.id}')">Modifier</button>
@@ -1943,7 +2163,7 @@
                   <td>${escapeHTML(r.student?.matricule || `${r.student?.nom || ""} ${r.student?.prenom || ""}`.trim())}</td>
                   <td>${escapeHTML(r.subjectTitle || r.subjectId || "Devoir importé")}</td>
                   <td><strong>${escapeHTML(r.note20 ?? "")}</strong></td>
-                  <td>Statut ${(r.autoSend === true || r.pageExitDetected === true) ? "Auto envoi" : "Normal"} | Score ${escapeHTML(r.score ?? "")} | Bonnes ${escapeHTML(r.good ?? "")} | Mauvaises ${escapeHTML(r.bad ?? "")} | Vides ${escapeHTML(r.empty ?? "")} | Temps ${escapeHTML(r.usedTime ?? "")} | Incidents sécurité ${escapeHTML(r.pageExitCount ?? 0)}<br>${renderSecurityEvents(r.pageExitEvents || r.securityEvents)}
+                  <td>Statut ${(r.autoSend === true || r.pageExitDetected === true) ? "Auto envoi" : "Normal"} | Score ${escapeHTML(r.score ?? "")} | Bonnes ${escapeHTML(r.good ?? "")} | Mauvaises ${escapeHTML(r.bad ?? "")} | Vides ${escapeHTML(r.empty ?? "")} | Incidents sécurité ${escapeHTML(r.pageExitCount ?? 0)}<br>${renderSecurityEvents(r.pageExitEvents || r.securityEvents)}
 </td>
                 </tr>
               `).join("") || `<tr><td colspan="5">Aucun résultat pour le moment.</td></tr>`}
@@ -2139,12 +2359,12 @@
         matter: "Soins infirmiers",
         description: "Description du sujet",
         instructions: "Répondez à toutes les questions.",
-        duration: 30,
+        duration: 0,
         programmed: false,
-        openDate: new Date().toISOString().slice(0, 10),
-        openTime: "08:00",
-        closeDate: new Date().toISOString().slice(0, 10),
-        closeTime: "18:00",
+        openDate: "",
+        openTime: "",
+        closeDate: "",
+        closeTime: "",
         marking: { correct: 1, wrong: -1, empty: 0 },
         questions: []
       };
@@ -2158,22 +2378,15 @@
           </div>
           <div class="form-grid">
             <div><label>Titre</label><input id="edit-title" value="${escapeAttr(subject.title)}"></div>
-            <div><label>Matière</label><select id="edit-matter">
-              ${["Soins infirmiers", "Santé publique", "Obstétrique", "Anatomie", "Pharmacologie"].map(m => `<option ${subject.matter === m ? "selected" : ""}>${m}</option>`).join("")}
-            </select></div>
-            <div><label>Durée en minutes</label><input id="edit-duration" type="number" min="1" value="${subject.duration}"></div>
-            <div><label>Affichage accueil</label><select id="edit-programmed">
+            <div><label>Matière</label><input id="edit-matter" value="${escapeAttr(subject.matter)}"></div>
+                        <div><label>Affichage accueil</label><select id="edit-programmed">
               <option value="false" ${subject.programmed !== true ? "selected" : ""}>Non programmé</option>
               <option value="true" ${subject.programmed === true ? "selected" : ""}>Programmé</option>
             </select></div>
             <div><label>Bonne réponse</label><input id="edit-correct" type="number" value="${subject.marking.correct}"></div>
             <div><label>Mauvaise réponse</label><input id="edit-wrong" type="number" value="${subject.marking.wrong}"></div>
             <div><label>Pas de réponse</label><input id="edit-empty" type="number" value="${subject.marking.empty}"></div>
-            <div><label>Date ouverture</label><input id="edit-open-date" type="date" value="${subject.openDate}"></div>
-            <div><label>Heure ouverture</label><input id="edit-open-time" type="time" value="${subject.openTime}"></div>
-            <div><label>Date fermeture</label><input id="edit-close-date" type="date" value="${subject.closeDate}"></div>
-            <div><label>Heure fermeture</label><input id="edit-close-time" type="time" value="${subject.closeTime}"></div>
-          </div>
+                      </div>
           <label>Description</label><textarea id="edit-description">${escapeHTML(subject.description)}</textarea>
           <label>Consignes</label><textarea id="edit-instructions">${escapeHTML(subject.instructions)}</textarea>
           <h3>Questions</h3>
@@ -2243,12 +2456,12 @@
         matter: document.getElementById("edit-matter").value,
         description: document.getElementById("edit-description").value.trim(),
         instructions: document.getElementById("edit-instructions").value.trim(),
-        duration: Number(document.getElementById("edit-duration").value),
+        duration: 0,
         programmed: document.getElementById("edit-programmed").value === "true",
-        openDate: document.getElementById("edit-open-date").value,
-        openTime: document.getElementById("edit-open-time").value,
-        closeDate: document.getElementById("edit-close-date").value,
-        closeTime: document.getElementById("edit-close-time").value,
+        openDate: "",
+        openTime: "",
+        closeDate: "",
+        closeTime: "",
         marking: {
           correct: Number(document.getElementById("edit-correct").value),
           wrong: Number(document.getElementById("edit-wrong").value),
@@ -2257,7 +2470,7 @@
         questions: window.editingQuestions
       };
 
-      if (!subject.title || !subject.openDate || !subject.closeDate || !subject.duration) {
+      if (!subject.title) {
         return alert("Veuillez remplir les champs obligatoires.");
       }
 
